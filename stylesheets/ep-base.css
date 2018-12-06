@@ -1,0 +1,61 @@
+table#nav-bar {
+    width: 100%;
+    background-color: forestgreen;
+    padding: 6px;
+    border-radius:8px;
+}
+
+td.nav-bar-item {
+    width: 25%;
+    border-style: inset;
+    border-width: 2px;
+    border-radius: 6px;
+    padding: 3px;
+    margin-left: 5px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+td.nav-bar-item>a:link, td.nav-bar-item>a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+td.nav-bar-item:hover {
+    background-color: lightgreen;
+    text-decoration: overline;
+}
+
+td.nav-bar-item>a:active {
+    color: indigo;
+    text-decoration: none;
+}
+
+td#current-page {
+    background-color: plum;
+    text-decoration: none;
+}
+
+td#side-panel {
+    width: 175px;
+    background-color: dodgerblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    vertical-align: bottom;
+    padding: 5px;
+}
+
+div.faq-block {
+    background-color: bisque;
+    padding: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 12px;
+}
+
+p.question-text {
+    font-size: 24px;
+}
+
+.basic-font {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
