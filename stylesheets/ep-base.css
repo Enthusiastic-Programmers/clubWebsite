@@ -1,6 +1,10 @@
+body{
+    margin-left:200px;
+    margin-right:200px;
+}
 table#nav-bar {
     width: 100%;
-    background-color: forestgreen;
+    background-color: #bbb;
     padding: 6px;
     border-radius:8px;
 }
@@ -22,7 +26,7 @@ td.nav-bar-item>a:link, td.nav-bar-item>a:visited {
 }
 
 td.nav-bar-item:hover {
-    background-color: lightgreen;
+    background-color: #cecece;
     text-decoration: overline;
 }
 
@@ -32,13 +36,13 @@ td.nav-bar-item>a:active {
 }
 
 td#current-page {
-    background-color: plum;
+    background-color: #dedede;
     text-decoration: none;
 }
 
 td#side-panel {
     width: 175px;
-    background-color: dodgerblue;
+    /*background-color: dodgerblue;*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     vertical-align: bottom;
     padding: 5px;
