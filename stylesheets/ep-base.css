@@ -66,3 +66,11 @@ p.question-text {
     margin-top:5px;
     margin-bottom:5px;
 }
+
+#join-club > *{
+    margin-bottom: 20px;
+}
+
+#join-club label{
+    display:block;
+}
