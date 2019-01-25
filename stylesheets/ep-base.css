@@ -74,3 +74,7 @@ p.question-text {
 #join-club label{
     display:block;
 }
+
+#join-club input[type=text], #join-club input[type=email]{
+    width:250px;
+}
