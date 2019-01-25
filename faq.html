@@ -6,28 +6,23 @@
     </head>
     <body>
         <a href="./index.html"><img src="./images/enthusiastic-logo.png" style="width:320px;"/></a>
-        <table id="nav-bar">
-            <tr>
-                <!-- This should respond to table#navigation-bar>tr>td, but it doesn't?-->
-                <td class="nav-bar-item"><a href="index.html">Home</a></td>
-                <td class="nav-bar-item" id="current-page">FAQ</td>
-                <td class="nav-bar-item"><a href="about.html">About</a></td>
-                <td class="nav-bar-item"><a href="contact.html">Contact Info</a></td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td id="side-panel">
-                    <p style="text-align:right;padding-right:5px;font-size:12px;font-family:'Courier New', Courier, monospace">&copy;HydroPlume 2420</p>
-                </td>
-                <td colspan=3>
-                    <h4>This is a page of frequently asked questions; hopefully it answers yours.</h4>
-                    <div class="faq-block">
-                        <p class="question-text">Q: What is this website actually for?</p>
-                        <p class="answer-text">A: We don't really have a clue. Sorry.</p>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <header>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a>FAQ</a></li>
+                    <li><a href="about.html">About Ethan</a></li>
+                    <li><a href="contact.html">Contact Info</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h4>This is a page of frequently asked questions; hopefully it answers yours.</h4>
+            <div class="faq-block">
+                <p class="question-text">Q: What is this website actually for?</p>
+                <p class="answer-text">A: We don't really have a clue. Sorry.</p>
+            </div>
+        </main>
     </body>
 </html>
