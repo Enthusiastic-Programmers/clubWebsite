@@ -6,64 +6,60 @@
     </head>
     <body>
         <a href="./index.html"><img src="./images/enthusiastic-logo.png" style="width:320px;"/></a>
-        <table id="nav-bar">
-            <tr>
-                <!-- This should respond to table#navigation-bar>tr>td, but it doesn't?-->
-                <td class="nav-bar-item" id="current-page">Home</td>
-                <td class="nav-bar-item"><a href="faq.html">FAQ</a></td>
-                <td class="nav-bar-item"><a href="about.html">About Ethan</a></td>
-                <td class="nav-bar-item"><a href="contact.html">Contact Info</a></td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td id="side-panel" rowspan=2>
-                    <p style="color:white;text-align:center;padding:10px;font-size:12px;">I haven't figured out what this is for, but it makes some nice spacing.</p>
-                    <p style="text-align:right;padding-right:5px;font-size:12px;font-family:'Courier New', Courier, monospace">&copy;HydroPlume 2420</p>
-                </td>
-                <td colspan=2 style="padding:10px;width:450px;vertical-align:top;">
-                    <h2 style="text-decoration:underline;">Do you know this man??!?</h2>
-                    <a href="about.html">
-                        <img src="./images/this-is-ethan.png" alt="Our boi Ethan with some loot" style="width:450px;float:left;padding:15px;padding-bottom:2px;"/>
-                    </a>
-                    <p class="basic-font" style="text-align:center;">Just take a look at that loot! WOW!</p>
-                    <p style="text-align:center;font-size:32px;font-family:Comic Sans, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">This is a man that knows what he likes</p>
-                    <p class="basic-font">Pictured above: The magic man coming back from a raid with hundreds of pounds of swag for his supporters.</p>
-                    <p></p>
-                </td>
-                <td style="padding-right:10px;vertical-align:top;">
-                    <br><br>
-                    <p>
-                        <span style="font-size:28px">&nbsp;Ethan Bonavida</span> is the president of the Computer Science club here at Moorpark College.
-                        as the president of our very special club, Ethan has many jobs, including:
-                    </p>
-                    <ul>
-                        <li>Looking awesome</li>
-                        <li>Attracting the babez</li>
-                        <li>Charming faculty into increasing the club budget</li>
-                        <li>Bringing back prizes as the people's champion</li>
-                        <li style="text-decoration:line-through;font-size:10px;">Forcing club members to write websites for him</li>
-                    </ul>
-                    <p>
-                        &nbsp;&nbsp;Now I know what you're thinking here: there couldn't possibly be a man capable of doing all these things. 
-                        Well, you're right: Ethan is actually 1/36th part <span style="color: darkred">redwood</span>. I don't know how that works 
-                        either, but it means he's not <span style="font-style: oblique;">just</span> a man. We haven't noticed anything very redwood 
-                        about him, though.
-                    </p>
-                    <p>
-                        &nbsp;&nbsp;However, upon being elected president of the Enthusiastic Programmers club, the Bonafide Bonavida 
-                        gained the power of omniscience, which only increased the radiance of his awesome. Instead of having 50 times the 
-                        power level of a regular human, he now has an effectively infinite advantage over the average person. This makes 
-                        him even more capable of the job entrusted to him by the good club members of Enthusiastic Programmers.
-                    </p>
-                    <p>
-                        &nbsp;&nbsp;This hero is so well liked, that he often can't play his recent favorite game, Destiny 2, in peace and quiet 
-                        from his bothersome followers' questions and attention. The following is a graph showing the amount of disappointment 
-                        accrued from Ethan's dismissal:
-                    </p>
-                    <img src="images/graph-ethan-dismissal.png" alt="Very disappointing numbers in exponential form" style="text-align:center;width:500px"/>
-                </td>
-            </tr>
-        </table>
+        <header>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="about.html">About Ethan</a></li>
+                    <li><a href="contact.html">Contact Info</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <figure class="ethan-image">
+                <h2 style="text-decoration:underline;">Do you know this man??!?</h2>
+                <a href="about.html">
+                    <img src="./images/this-is-ethan.png" alt="Our boi Ethan with some loot" style="width:450px;padding:15px;padding-bottom:2px;"/>
+                </a>
+                <p class="basic-font" style="text-align:center;">Just take a look at that loot! WOW!</p>
+                <p class="basic-font" style="text-align:center;font-size:32px">This is a man that knows what he likes</p>
+                <p class="basic-font">Pictured above: The magic man coming back from a raid with hundreds of pounds of swag for his supporters.</p>
+                <p></p>
+            </figure>
+
+            <div class="ethan-info">
+                <p>
+                    <span style="font-size:28px">&nbsp;Ethan Bonavida</span> is the president of the Computer Science club here at Moorpark College.
+                    as the president of our very special club, Ethan has many jobs, including:
+                </p>
+                <ul>
+                    <li>Looking awesome</li>
+                    <li>Attracting the babez</li>
+                    <li>Charming faculty into increasing the club budget</li>
+                    <li>Bringing back prizes as the people's champion</li>
+                    <li style="text-decoration:line-through;font-size:10px;">Forcing club members to write websites for him</li>
+                </ul>
+                <p>
+                    &nbsp;&nbsp;Now I know what you're thinking here: there couldn't possibly be a man capable of doing all these things. 
+                    Well, you're right: Ethan is actually 1/36th part <span style="color: darkred">redwood</span>. I don't know how that works 
+                    either, but it means he's not <span style="font-style: oblique;">just</span> a man. We haven't noticed anything very redwood 
+                    about him, though.
+                </p>
+                <p>
+                    &nbsp;&nbsp;However, upon being elected president of the Enthusiastic Programmers club, the Bonafide Bonavida 
+                    gained the power of omniscience, which only increased the radiance of his awesome. Instead of having 50 times the 
+                    power level of a regular human, he now has an effectively infinite advantage over the average person. This makes 
+                    him even more capable of the job entrusted to him by the good club members of Enthusiastic Programmers.
+                </p>
+                <p>
+                    &nbsp;&nbsp;This hero is so well liked, that he often can't play his recent favorite game, Destiny 2, in peace and quiet 
+                    from his bothersome followers' questions and attention. The following is a graph showing the amount of disappointment 
+                    accrued from Ethan's dismissal:
+                </p>
+                <img src="images/graph-ethan-dismissal.png" alt="Very disappointing numbers in exponential form" style="text-align:center;width:500px"/>
+            </div>
+        </main>
     </body>
 </html>
