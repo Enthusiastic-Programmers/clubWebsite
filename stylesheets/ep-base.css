@@ -3,31 +3,6 @@ body{
     width:80vw;
 }
 
-.topbar {
-	margin: 0;
-	background: #777; 
-	
-}
-
-.topbar2 {
-	margin: 0 0 0 40px;
-	color: #333;
-	font-family: cobalt;
-	padding: 20px 15px 20px 15 px; 
-}
-
-
-
-.topbar3 {
-	font-size: 110%;
-	
-	float: right;
-	display: inline-block;
-	list-style-type: none;   
-	padding: 12px 18px ;
-	color: white;
-}
-
 #nav-bar {
     width: 100%;
     background-color: #bbb;
