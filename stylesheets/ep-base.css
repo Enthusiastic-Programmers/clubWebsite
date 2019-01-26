@@ -3,39 +3,43 @@ body{
     width:80vw;
 }
 
-#nav-bar {
-    width: 100%;
-    background-color: #bbb;
+header{
+    display:flex;
 }
-    #nav-bar ul{
-        display:flex;
-        flex-wrap: wrap;
-        justify-content:center;
-        padding:6px;
-        list-style-type: none;
+
+    #nav-bar {
+        width: 100%;
+        flex-grow:1;
     }
-        #nav-bar li{
-            flex-grow:1;
-
-            border-style: inset;
-            border-width: 2px;
-
-            border-radius: 6px;
-            border-color:white;
-            margin-left: 5px;
-            background-color: white;
-            text-align: center;
+        #nav-bar ul{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            padding:6px;
+            list-style-type: none;
         }
-            #nav-bar li a{
-                padding: 3px;
-                display:block;
-                height:100%;
-                width:100%;
+            #nav-bar li{
+                flex-grow:1;
+
+                border-style: inset;
+                border-width: 2px;
+
+                border-radius: 6px;
+                border-color:black;
+                margin-left: 5px;
+                background-color: white;
+                text-align: center;
             }
-    #nav-bar li:hover{
-        background-color: #cecece;
-        text-decoration: overline;
-    }
+                #nav-bar li a{
+                    padding: 3px;
+                    display:block;
+                    height:100%;
+                    width:100%;
+                }
+        #nav-bar li:hover{
+            background-color: #cecece;
+            text-decoration: overline;
+        }
 
 
 .ethan-image{
