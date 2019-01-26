@@ -3,64 +3,43 @@ body{
     width:80vw;
 }
 
-.topbar {
-	margin: 0;
-	background: #777; 
-	
+header{
+    display:flex;
 }
 
-.topbar2 {
-	margin: 0 0 0 40px;
-	color: #333;
-	font-family: cobalt;
-	padding: 20px 15px 20px 15 px; 
-}
-
-
-
-.topbar3 {
-	font-size: 110%;
-	
-	float: right;
-	display: inline-block;
-	list-style-type: none;   
-	padding: 12px 18px ;
-	color: white;
-}
-
-#nav-bar {
-    width: 100%;
-    background-color: #bbb;
-}
-    #nav-bar ul{
-        display:flex;
-        flex-wrap: wrap;
-        justify-content:center;
-        padding:6px;
-        list-style-type: none;
+    #nav-bar {
+        width: 100%;
+        flex-grow:1;
     }
-        #nav-bar li{
-            flex-grow:1;
-
-            border-style: inset;
-            border-width: 2px;
-
-            border-radius: 6px;
-            border-color:white;
-            margin-left: 5px;
-            background-color: white;
-            text-align: center;
+        #nav-bar ul{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            padding:6px;
+            list-style-type: none;
         }
-            #nav-bar li a{
-                padding: 3px;
-                display:block;
-                height:100%;
-                width:100%;
+            #nav-bar li{
+                flex-grow:1;
+
+                border-style: inset;
+                border-width: 2px;
+
+                border-radius: 6px;
+                border-color:black;
+                margin-left: 5px;
+                background-color: white;
+                text-align: center;
             }
-    #nav-bar li:hover{
-        background-color: #cecece;
-        text-decoration: overline;
-    }
+                #nav-bar li a{
+                    padding: 3px;
+                    display:block;
+                    height:100%;
+                    width:100%;
+                }
+        #nav-bar li:hover{
+            background-color: #cecece;
+            text-decoration: overline;
+        }
 
 
 .ethan-image{
