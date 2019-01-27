@@ -6,7 +6,7 @@ import html
 import time
 import sqlite3
 import secrets
-import common
+import common, email_confirmation
 
 # https://stackabuse.com/a-sqlite-tutorial-with-python/
 
@@ -34,6 +34,8 @@ def _add_member(email, student_id, first_name, last_name, time_added, confirmati
     connection = sqlite3.connect(database_path)
     try:
         _check_database(connection)
+        email_confirmation.prune_expired_members(connection)
+
         cursor = connection.cursor()
         # Check if this email address is already in database
         if iterlength(cursor.execute("SELECT * FROM members WHERE email= ? ", (email,) )) > 0:
@@ -55,6 +57,8 @@ def _remove_member(email):
     connection = sqlite3.connect(database_path)
     try:
         _check_database(connection)
+        email_confirmation.prune_expired_members(connection)
+
         cursor = connection.cursor()
         cursor.execute("DELETE FROM members WHERE email= ?", (email, ))
         connection.commit()
