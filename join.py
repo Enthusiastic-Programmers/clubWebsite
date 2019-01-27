@@ -4,7 +4,6 @@ from email.utils import parseaddr
 import os
 import html
 import time
-import sqlite3
 import secrets
 import common, email_confirmation
 
@@ -16,7 +15,7 @@ def iterlength(iterable):
     return sum(1 for i in iterable)
 
 def _add_member(email, student_id, first_name, last_name, time_added, confirmation_token, confirmed):
-    connection = sqlite3.connect(common.database_path)
+    connection = common.open_database()
     try:
         common.check_database(connection)
         email_confirmation.prune_expired_members(connection)
@@ -39,7 +38,7 @@ def _add_member(email, student_id, first_name, last_name, time_added, confirmati
         connection.close()
 
 def _remove_member(email):
-    connection = sqlite3.connect(common.database_path)
+    connection = common.open_database()
     try:
         common.check_database(connection)
         email_confirmation.prune_expired_members(connection)

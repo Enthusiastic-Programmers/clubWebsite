@@ -1,4 +1,3 @@
-import sqlite3
 import time
 import urllib
 import common
@@ -14,7 +13,7 @@ def prune_expired_members(connection):
 
 def _confirm_member(token):
     ''' Returns string indicating whether confirmation was successful or not '''
-    connection = sqlite3.connect(common.database_path)
+    connection = common.open_database()
     try:
         common.check_database(connection)
         prune_expired_members(connection)

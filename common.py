@@ -1,5 +1,6 @@
 from string import Template
 import os
+import sqlite3
 
 database_path = os.path.normpath('./data/members.sqlite')
 
@@ -9,6 +10,12 @@ with open('./template.html', 'r', encoding='utf-8') as f:
 def error_page(environ, start_response, message, code='400 Bad Request'):
     start_response(code, [('Content-Type', 'text/html')])
     yield basic_template.substitute(title='Error', main='Error: ' + message).encode('utf-8')
+
+def open_database():
+    database_directory = os.path.dirname(database_path)
+    if not os.path.exists(database_directory):
+        os.makedirs(database_directory)
+    return sqlite3.connect(database_path)
 
 def check_database(connection):
     cursor = connection.cursor()
