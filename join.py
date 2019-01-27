@@ -5,38 +5,67 @@ import os
 from string import Template
 import html
 import time
+import sqlite3
+import secrets
 
-members_csv = os.path.normpath('./data/members.csv')
-members_directory = os.path.dirname(members_csv)
-# just completely remove commas, newlines, and quotes from field instead of dealing with stupid csv escaping
-# we don't need those characters in data anyway
-def sanitize_field(field):
-    for character in ('"', ',', '\r', '\n'):
-        field = field.replace(character, '')
-    return field
+# https://stackabuse.com/a-sqlite-tutorial-with-python/
 
+database_path = os.path.normpath('./data/members.sqlite')
 
-def add_member(email, student_id, first_name, last_name): #, time_added, confirmation_code, confirmed):
-    line_to_add = ','.join(sanitize_field(field) for field in (email, student_id, first_name, last_name))
+def _check_database(connection):
+    cursor = connection.cursor()
+    tables = cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    if 'members' not in (row[0] for row in tables):
+        cursor.execute('''CREATE TABLE members (
+                                email text PRIMARY KEY NOT NULL,
+                                student_id text NOT NULL,
+                                first_name text NOT NULL,
+                                last_name text NOT NULL,
+                                time_added real,
+                                confirmation_code text,
+                                confirmed boolean
+                                )''')
 
-    # check that directory with members.csv exists
-    if not os.path.exists(members_directory):
-        os.makedirs(members_directory)
+def iterlength(iterable):
+    ''' Return length of finite iterable '''
+    return sum(1 for i in iterable)
+
+def _add_member(email, student_id, first_name, last_name, time_added, confirmation_code, confirmed):
+    connection = sqlite3.connect(database_path)
     try:
-        with open(members_csv, 'r', encoding='utf-8') as f:
-            members = f.read()
-    except FileNotFoundError:
-        with open(members_csv, 'a+', encoding='utf-8') as f:
-            f.write('email,student_id,first_name,last_name,time_added,confirmation_code,confirmed\n' + line_to_add + '\n')
-    else:
-        start_position = members.find('\n' + email)
-        if start_position == -1:
-            members += line_to_add + '\n'
-        else:   # member already exists, update line
-            end_position = members.find('\n', start_position+1)
-            members = members[0:start_position+1] + line_to_add + members[end_position:]
-        with open(members_csv, 'w', encoding='utf-8') as f:
-            f.write(members)
+        _check_database(connection)
+        cursor = connection.cursor()
+        # Check if this email address is already in database
+        if iterlength(cursor.execute("SELECT * FROM members WHERE email= ? ", (email,) )) > 0:
+            # Update member info
+            cursor.execute("""UPDATE members
+                              SET student_id = ?, first_name = ?, last_name = ?, time_added = ?, confirmation_code = ?, confirmed = ? 
+                            WHERE email = ?""", (student_id, first_name, last_name, time_added, confirmation_code, confirmed, email))
+        else:
+            cursor.execute('''INSERT INTO members (email, student_id, first_name, last_name, time_added, confirmation_code, confirmed) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?)''', (email, student_id, first_name, last_name, time_added, confirmation_code, confirmed))
+        connection.commit()
+    except:
+        connection.rollback()
+        raise
+    finally:
+        connection.close()
+
+def _remove_member(email):
+    connection = sqlite3.connect(database_path)
+    try:
+        _check_database(connection)
+        cursor = connection.cursor()
+        cursor.execute("DELETE FROM members WHERE email= ?", (email, ))
+        connection.commit()
+    except:
+        connection.rollback()
+        raise
+    finally:
+        connection.close()
+
+
+
 
 with open('./template.html', 'r', encoding='utf-8') as f:
     basic_template = Template(f.read())
@@ -83,6 +112,14 @@ def application(environ, start_response):
         yield from error_page(environ, start_response, 'Invalid email address')
         return
 
-    add_member(email, student_id, first_name, last_name)
+
+    time_added = time.time()
+
+    # Confirmation code to be used in email confirmation link
+    confirmation_code = str(time_added) + '_' + secrets.token_urlsafe(nbytes=32)
+
+    # Now add the person to the members table
+    _add_member(email, student_id, first_name, last_name, time_added, confirmation_code, False)
+
     start_response('200 OK', [('Content-Type', 'text/html')] )
     yield basic_template.substitute(title='Success', main='An email has been sent to ' + html.escape(email) + ' to confirm your membership').encode('utf-8')
