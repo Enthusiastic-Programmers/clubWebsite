@@ -28,6 +28,8 @@ def application(environ, start_response):
             yield from join.application(environ, start_response)
         elif path == '/confirm':
             yield from email_confirmation.confirm(environ, start_response)
+        elif path == '/email_sent':
+            yield from join.email_sent_page(environ, start_response)
         elif path in static_files or path.startswith('/stylesheets/') or path.startswith('/images/'):
             yield from serve_file(environ, start_response)
         else:

@@ -67,7 +67,20 @@ def _remove_member(email):
     finally:
         connection.close()
 
+def email_sent_page(environ, start_response):
+    method = environ['REQUEST_METHOD']
+    if method != "GET":
+        yield from common.error_page(environ, start_response, "Bad request", code="405 Method Not Allowed")
+        return
 
+    parameters = urllib.parse.parse_qs(environ['QUERY_STRING'])
+    if 'email' not in parameters:
+        yield from common.error_page(environ, start_response, "Missing email parameter")
+        return
+
+    email = parameters['email'][0]
+    start_response('200 OK', [('Content-Type', 'text/html')] )
+    yield common.basic_template.substitute(title='Success', main='An email has been sent to ' + html.escape(email) + ' to confirm your membership').encode('utf-8')
 
 # https://docs.python.org/3/tutorial/datastructures.html#sets
 # https://docs.python.org/3/library/stdtypes.html#set
@@ -115,5 +128,5 @@ def application(environ, start_response):
     # Now add the person to the members table
     _add_member(email, student_id, first_name, last_name, time_added, confirmation_token, False)
 
-    start_response('200 OK', [('Content-Type', 'text/html')] )
-    yield common.basic_template.substitute(title='Success', main='An email has been sent to ' + html.escape(email) + ' to confirm your membership').encode('utf-8')
+    start_response('303 See Other', [('Location', '/email_sent?email=' + urllib.parse.quote_plus(email) )] )
+    yield b''
