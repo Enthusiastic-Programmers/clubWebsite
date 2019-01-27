@@ -10,7 +10,6 @@ import common, email_confirmation
 
 # https://stackabuse.com/a-sqlite-tutorial-with-python/
 
-database_path = os.path.normpath('./data/members.sqlite')
 
 def _check_database(connection):
     cursor = connection.cursor()
@@ -31,7 +30,7 @@ def iterlength(iterable):
     return sum(1 for i in iterable)
 
 def _add_member(email, student_id, first_name, last_name, time_added, confirmation_code, confirmed):
-    connection = sqlite3.connect(database_path)
+    connection = sqlite3.connect(common.database_path)
     try:
         _check_database(connection)
         email_confirmation.prune_expired_members(connection)
@@ -54,7 +53,7 @@ def _add_member(email, student_id, first_name, last_name, time_added, confirmati
         connection.close()
 
 def _remove_member(email):
-    connection = sqlite3.connect(database_path)
+    connection = sqlite3.connect(common.database_path)
     try:
         _check_database(connection)
         email_confirmation.prune_expired_members(connection)

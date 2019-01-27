@@ -4,7 +4,7 @@ monkey.patch_all()
 from gevent.pywsgi import WSGIServer
 import join
 import mimetypes
-import common
+import common, email_confirmation
 
 static_files = {'/about.html', '/contact.html', '/faq.html', '/index.html', '/join.html'}
 def serve_file(environ, start_response):
@@ -26,6 +26,8 @@ def application(environ, start_response):
         path = environ['PATH_INFO']
         if path == '/join':
             yield from join.application(environ, start_response)
+        elif path == '/confirm':
+            yield from email_confirmation.confirm(environ, start_response)
         elif path in static_files or path.startswith('/stylesheets/') or path.startswith('/images/'):
             yield from serve_file(environ, start_response)
         else:

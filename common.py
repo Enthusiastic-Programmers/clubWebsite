@@ -1,4 +1,7 @@
 from string import Template
+import os
+
+database_path = os.path.normpath('./data/members.sqlite')
 
 with open('./template.html', 'r', encoding='utf-8') as f:
     basic_template = Template(f.read())
