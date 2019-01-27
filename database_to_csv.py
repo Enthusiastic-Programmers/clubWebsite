@@ -16,7 +16,7 @@ connection = sqlite3.connect(database_path)
 cursor = connection.cursor()
 rows = cursor.execute("SELECT * FROM members")
 
-members_csv = 'email,student_id,first_name,last_name,time_added,confirmation_code,confirmed\n'
+members_csv = 'email,student_id,first_name,last_name,time_added,confirmation_token,confirmed\n'
 for row in rows:
     members_csv += ','.join(sanitize_field(str(field)) for field in row) + '\n'
 

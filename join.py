@@ -21,7 +21,7 @@ def _check_database(connection):
                                 first_name text NOT NULL,
                                 last_name text NOT NULL,
                                 time_added real,
-                                confirmation_code text,
+                                confirmation_token text,
                                 confirmed boolean
                                 )''')
 
@@ -29,7 +29,7 @@ def iterlength(iterable):
     ''' Return length of finite iterable '''
     return sum(1 for i in iterable)
 
-def _add_member(email, student_id, first_name, last_name, time_added, confirmation_code, confirmed):
+def _add_member(email, student_id, first_name, last_name, time_added, confirmation_token, confirmed):
     connection = sqlite3.connect(common.database_path)
     try:
         _check_database(connection)
@@ -40,11 +40,11 @@ def _add_member(email, student_id, first_name, last_name, time_added, confirmati
         if iterlength(cursor.execute("SELECT * FROM members WHERE email= ? ", (email,) )) > 0:
             # Update member info
             cursor.execute("""UPDATE members
-                              SET student_id = ?, first_name = ?, last_name = ?, time_added = ?, confirmation_code = ?, confirmed = ? 
-                            WHERE email = ?""", (student_id, first_name, last_name, time_added, confirmation_code, confirmed, email))
+                              SET student_id = ?, first_name = ?, last_name = ?, time_added = ?, confirmation_token = ?, confirmed = ? 
+                            WHERE email = ?""", (student_id, first_name, last_name, time_added, confirmation_token, confirmed, email))
         else:
-            cursor.execute('''INSERT INTO members (email, student_id, first_name, last_name, time_added, confirmation_code, confirmed) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?)''', (email, student_id, first_name, last_name, time_added, confirmation_code, confirmed))
+            cursor.execute('''INSERT INTO members (email, student_id, first_name, last_name, time_added, confirmation_token, confirmed) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?)''', (email, student_id, first_name, last_name, time_added, confirmation_token, confirmed))
         connection.commit()
     except:
         connection.rollback()
@@ -110,10 +110,10 @@ def application(environ, start_response):
     time_added = time.time()
 
     # Confirmation code to be used in email confirmation link
-    confirmation_code = str(time_added) + '_' + secrets.token_urlsafe(nbytes=32)
+    confirmation_token = str(time_added) + '_' + secrets.token_urlsafe(nbytes=32)
 
     # Now add the person to the members table
-    _add_member(email, student_id, first_name, last_name, time_added, confirmation_code, False)
+    _add_member(email, student_id, first_name, last_name, time_added, confirmation_token, False)
 
     start_response('200 OK', [('Content-Type', 'text/html')] )
     yield common.basic_template.substitute(title='Success', main='An email has been sent to ' + html.escape(email) + ' to confirm your membership').encode('utf-8')

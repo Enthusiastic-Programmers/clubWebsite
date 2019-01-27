@@ -18,7 +18,7 @@ def _confirm_member(token):
     try:
         prune_expired_members(connection)
         cursor = connection.cursor()
-        results = list( cursor.execute("""SELECT confirmed FROM members WHERE confirmation_code = ?""", (token,)) )
+        results = list( cursor.execute("""SELECT confirmed FROM members WHERE confirmation_token = ?""", (token,)) )
         if len(results) == 0:
             message = "Confirmation link expired, please try again."
         else:
@@ -26,7 +26,7 @@ def _confirm_member(token):
             if row[0] == 1:
                 message = "Your membership has already been confirmed."
             else:
-                cursor.execute("""UPDATE members SET confirmed = 1 WHERE confirmation_code = ?""", (token,))
+                cursor.execute("""UPDATE members SET confirmed = 1 WHERE confirmation_token = ?""", (token,))
                 message = "Your membership has been confirmed."
 
         connection.commit()
