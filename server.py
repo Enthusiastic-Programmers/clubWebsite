@@ -8,7 +8,7 @@ import mimetypes
 static_files = {'/about.html', '/contact.html', '/faq.html', '/index.html', '/join.html'}
 def serve_file(environ, start_response):
     if environ['REQUEST_METHOD'] != "GET":
-        yield from join.error_page(environ, start_response, "Bad request", code="405 Method Not Allowed")
+        yield from common.error_page(environ, start_response, "Bad request", code="405 Method Not Allowed")
         return
     try:
         with open('.' + environ['PATH_INFO'], 'rb') as f:
