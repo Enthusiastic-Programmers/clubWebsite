@@ -4,6 +4,7 @@ monkey.patch_all()
 from gevent.pywsgi import WSGIServer
 import join
 import mimetypes
+import common
 
 static_files = {'/about.html', '/contact.html', '/faq.html', '/index.html', '/join.html'}
 def serve_file(environ, start_response):
@@ -14,8 +15,8 @@ def serve_file(environ, start_response):
         with open('.' + environ['PATH_INFO'], 'rb') as f:
             data = f.read()
     except FileNotFoundError:
-        start_response('404 Not Found', [('Content-Type', 'text/plain')])
-        yield b'404 Not Found'
+        yield from common.error_page(environ, start_response, "404 Not Found", code="404 Not Found")
+        return
     else:
         start_response('200 OK', [('Content-Type', mimetypes.guess_type(environ['PATH_INFO'])[0] )])
         yield data
@@ -28,8 +29,8 @@ def application(environ, start_response):
         elif path in static_files or path.startswith('/stylesheets/') or path.startswith('/images/'):
             yield from serve_file(environ, start_response)
         else:
-            start_response('404 Not Found', [('Content-Type', 'text/plain')])
-            yield b'404 Not Found'
+            yield from common.error_page(environ, start_response, "404 Not Found", code="404 Not Found")
+            return
 
     except Exception as e:
         start_response('500 Internal Server Error', [('Content-Type', 'text/plain')] )
