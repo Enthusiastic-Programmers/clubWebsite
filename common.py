@@ -9,3 +9,17 @@ with open('./template.html', 'r', encoding='utf-8') as f:
 def error_page(environ, start_response, message, code='400 Bad Request'):
     start_response(code, [('Content-Type', 'text/html')])
     yield basic_template.substitute(title='Error', main='Error: ' + message).encode('utf-8')
+
+def check_database(connection):
+    cursor = connection.cursor()
+    tables = cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    if 'members' not in (row[0] for row in tables):
+        cursor.execute('''CREATE TABLE members (
+                                email text PRIMARY KEY NOT NULL,
+                                student_id text NOT NULL,
+                                first_name text NOT NULL,
+                                last_name text NOT NULL,
+                                time_added real,
+                                confirmation_token text,
+                                confirmed boolean
+                                )''')

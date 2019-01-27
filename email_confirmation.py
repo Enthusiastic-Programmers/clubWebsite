@@ -16,6 +16,7 @@ def _confirm_member(token):
     ''' Returns string indicating whether confirmation was successful or not '''
     connection = sqlite3.connect(common.database_path)
     try:
+        common.check_database(connection)
         prune_expired_members(connection)
         cursor = connection.cursor()
         results = list( cursor.execute("""SELECT confirmed FROM members WHERE confirmation_token = ?""", (token,)) )

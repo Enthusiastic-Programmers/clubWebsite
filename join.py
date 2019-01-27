@@ -11,20 +11,6 @@ import common, email_confirmation
 # https://stackabuse.com/a-sqlite-tutorial-with-python/
 
 
-def _check_database(connection):
-    cursor = connection.cursor()
-    tables = cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
-    if 'members' not in (row[0] for row in tables):
-        cursor.execute('''CREATE TABLE members (
-                                email text PRIMARY KEY NOT NULL,
-                                student_id text NOT NULL,
-                                first_name text NOT NULL,
-                                last_name text NOT NULL,
-                                time_added real,
-                                confirmation_token text,
-                                confirmed boolean
-                                )''')
-
 def iterlength(iterable):
     ''' Return length of finite iterable '''
     return sum(1 for i in iterable)
@@ -32,7 +18,7 @@ def iterlength(iterable):
 def _add_member(email, student_id, first_name, last_name, time_added, confirmation_token, confirmed):
     connection = sqlite3.connect(common.database_path)
     try:
-        _check_database(connection)
+        common.check_database(connection)
         email_confirmation.prune_expired_members(connection)
 
         cursor = connection.cursor()
@@ -55,7 +41,7 @@ def _add_member(email, student_id, first_name, last_name, time_added, confirmati
 def _remove_member(email):
     connection = sqlite3.connect(common.database_path)
     try:
-        _check_database(connection)
+        common.check_database(connection)
         email_confirmation.prune_expired_members(connection)
 
         cursor = connection.cursor()
