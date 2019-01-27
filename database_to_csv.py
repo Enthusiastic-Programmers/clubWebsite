@@ -26,4 +26,4 @@ finally:
 with open(csv_path, 'w', encoding='utf-8') as f:
     f.write(members_csv)
 
-input('Success. Press any key to quit')
+input('Success. Press enter to quit')
