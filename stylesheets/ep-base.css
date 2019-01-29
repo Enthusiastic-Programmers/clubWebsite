@@ -1,3 +1,8 @@
+img{
+    /* Prevent image from being too big on mobile */
+    max-width:100vw;
+}
+
 body{
     margin:auto;
     width:80vw;
@@ -27,6 +32,8 @@ header{
                 border-radius: 6px;
                 border-color:black;
                 margin-left: 5px;
+                margin-top: 5px;
+                margin-bottom: 5px;
                 background-color: white;
                 text-align: center;
             }
@@ -77,4 +84,28 @@ p.question-text {
 
 #join-club input[type=text], #join-club input[type=email]{
     width:250px;
+}
+
+
+/* Mobile media queries. At end of document so it overrides any other rules
+https://stackoverflow.com/questions/10262082/css-media-queries-and-important
+*/
+@media (max-width:680px){
+    figure{
+        margin-left:0px;
+        margin-right:0px;
+        /* Floating doesn't work well on small screens */
+        float:none;
+    }
+
+    body{
+        /* No margins on side of page */
+        width:100vw;
+    }
+
+    header{
+        /* Put navbar below image */
+        flex-direction: column;
+    }
+
 }
