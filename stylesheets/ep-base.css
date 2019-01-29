@@ -90,7 +90,10 @@ p.question-text {
 /* Mobile media queries. At end of document so it overrides any other rules
 https://stackoverflow.com/questions/10262082/css-media-queries-and-important
 */
-@media (max-width:680px){
+/* max-device-width is not recommended:
+https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-max-width
+*/
+@media (max-width:43em){
     figure{
         margin-left:0px;
         margin-right:0px;
