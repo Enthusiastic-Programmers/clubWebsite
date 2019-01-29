@@ -110,5 +110,9 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
         /* Put navbar below image */
         flex-direction: column;
     }
+        #nav-bar li a{
+            padding-top:8px;
+            padding-bottom:8px;
+        }
 
 }
