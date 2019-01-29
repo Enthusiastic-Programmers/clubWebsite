@@ -26,15 +26,17 @@ header{
             #nav-bar li{
                 flex-grow:1;
 
-                border-style: inset;
-                border-width: 2px;
+                background-color:#eeeeee;
+                border-color:#e5e5e5;
 
+                border-width: 2px;
                 border-radius: 6px;
-                border-color:black;
+
+
+
                 margin-left: 5px;
                 margin-top: 5px;
                 margin-bottom: 5px;
-                background-color: white;
                 text-align: center;
             }
                 #nav-bar li a{
