@@ -98,7 +98,7 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
         margin-left:0px;
         margin-right:0px;
         /* Floating doesn't work well on small screens */
-        float:none;
+        float:none !important;
     }
 
     body{
