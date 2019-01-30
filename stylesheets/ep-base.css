@@ -43,8 +43,9 @@ header{
                     padding:10px;
                     display:block;
                     text-decoration: none;
+                    color: black;
                 }
-        #nav-bar li:hover{
+        #nav-bar li:not(.current-page):hover{
             background-color: #cecece;
             text-decoration: overline;
         }
