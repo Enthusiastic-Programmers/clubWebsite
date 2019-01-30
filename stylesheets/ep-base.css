@@ -42,6 +42,7 @@ header{
                 #nav-bar li a{
                     padding:10px;
                     display:block;
+                    text-decoration: none;
                 }
         #nav-bar li:hover{
             background-color: #cecece;
