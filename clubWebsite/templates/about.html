@@ -8,13 +8,14 @@
     </head>
     <body>
         <header>
-            <a href="./index.html"><img src="./images/EPFinal.png" style="width:320px;"/></a>
+            <a href="{{url_for('index')}}"><img src="/static/images/EPFinal.png" style="width:320px;"/></a>
             <nav id="nav-bar">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="{{url_for('index')}}">Home</a></li>
+                    <li><a href="{{url_for('faq')}}">FAQ</a></li>
                     <li class="current-page"><a>About Us</a></li>
-                    <li><a href="join.html">Join Club</a></li>
+                    <li><a href="{{url_for('join')}}">Join Club</a></li>
+
                 </ul>
             </nav>
         </header>
@@ -22,7 +23,7 @@
         <main>
             <figure class="ethan-image">
                 <h2 style="text-decoration:underline;">Do you know this man??!?</h2>
-                <a href="about.html">
+                <a href="{{url_for('about')}}">
                     <img src="./images/this-is-ethan.png" alt="Our boi Ethan with some loot" style="width:450px"/>
                 </a>
                 <p class="basic-font" style="text-align:center;">Just take a look at that loot! WOW!</p>

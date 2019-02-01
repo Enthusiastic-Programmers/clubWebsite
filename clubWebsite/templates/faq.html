@@ -8,13 +8,15 @@
     </head>
     <body>
         <header>
-            <a href="./index.html"><img src="./images/EPFinal.png" style="width:320px;"/></a>
+            <a href="{{url_for('index')}}"><img src="./images/EPFinal.png" style="width:320px;"/></a>
+
             <nav id="nav-bar">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{url_for('index')}}">Home</a></li>
                     <li class="current-page"><a>FAQ</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="join.html">Join Club</a></li>
+                    <li><a href="{{url_for('about')}}">About Us</a></li>
+                    <li><a href="{{url_for('contact')}}">Join Club</a></li>
+
                 </ul>
             </nav>
         </header>
