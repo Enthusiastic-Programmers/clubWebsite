@@ -1,3 +1,6 @@
 __pycache__/
 *$py.class
 data/
+
+# Virtual Environments
+*env*
