@@ -20,24 +20,45 @@
         </header>
 
         <main>
-            <form id="join-club" action="/join" method="POST">
+            <form id="join-club" action="{{url_for('join')}}" method="POST">
+                {{ form.hidden_tag() }}
                 <div>
-                    <label for="first_name">First Name:</label>
-                    <input type="text" name="first_name" id="first_name">
+                    {{ form.first_name.label() }}
+                    {{ form.first_name() }}
+                    {% for error in form.first_name.errors %}
+                        <small style="color: red">
+                            {{ error }}
+                        </small> 
+                    {% endfor %}
                 </div>
                 <div>
-                    <label for="last_name">Last Name:</label>
-                    <input type="text" name="last_name" id="last_name">
+                    {{ form.last_name.label() }}
+                    {{ form.last_name() }}
+                    {% for error in form.last_name.errors %}
+                        <small style="color: red">
+                            {{ error }}
+                        </small> 
+                    {% endfor %}
                 </div>
                 <div>
-                    <label for="900_number">900 Number:</label>
-                    <input type="text" name="student_id" id="900_number" pattern="900\d{6}" title="Enter your student id number starting with 900 (9 digits long)">
+                    {{ form.student_id.label() }}
+                    {{ form.student_id() }}
+                    {% for error in form.student_id.errors %}
+                        <small style="color: red">
+                            {{ error }}
+                        </small> 
+                    {% endfor %}
                 </div>
                 <div>
-                    <label for="email">myVCCCD email:</label>
-                    <input type="email" name="email" id="email" pattern=".+@my.vcccd.edu" title="Enter a my.vcccd.edu email">
+                    {{ form.email.label() }}
+                    {{ form.email() }}
+                    {% for error in form.email.errors %}
+                        <small style="color: red">
+                            {{ error }}
+                        </small> 
+                    {% endfor %}
                 </div>
-                <input type="submit" value="Submit">
+                {{ form.submit() }}
             </form>
         </main>
     </body>
