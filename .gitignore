@@ -4,3 +4,4 @@ data/
 
 # Virtual Environments
 *env*
+*.db

@@ -4,29 +4,30 @@ import html
 import urllib
 from werkzeug import unescape
 
-from flask import render_template, send_from_directory, request, redirect, url_for, abort, Response
+from flask import Blueprint, render_template, send_from_directory, request, redirect, url_for, abort, Response
 
-from clubWebsite import app
 from clubWebsite.forms import RegisterForm
-from clubWebsite.database import _confirm_member, _add_member
+from clubWebsite.database.models import Member
 
-@app.route("/")
+views_blueprint = Blueprint('views', __name__, template_folder='templates')
+
+@views_blueprint.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/faq")
+@views_blueprint.route("/faq")
 def faq():
     return render_template("faq.html")
 
-@app.route("/about")
+@views_blueprint.route("/about")
 def about():
     return render_template("about.html")
 
-@app.route("/contact")
+@views_blueprint.route("/contact")
 def contact():
     return render_template("contact.html")
 
-@app.route("/join", methods=['GET','POST'])
+@views_blueprint.route("/join", methods=['GET','POST'])
 def join():
     # Initialize form and check if it is valid
     form = RegisterForm() 
@@ -34,35 +35,37 @@ def join():
 
     # On form submission with valid input
     if request.method == 'POST' and valid:
-        time_added = time.time()
-
-        # Confirmation code to be used in email confirmation link
-        confirmation_token = str(time_added) + '_' + secrets.token_urlsafe(nbytes=32)
-
-        # Now add the person to the members table
-        print(form.email.data, form.student_id.data, form.first_name.data, form.last_name.data, time_added, confirmation_token, False)
-        _add_member(form.email.data, form.student_id.data, form.first_name.data, form.last_name.data, time_added, confirmation_token, False)
+        #print(form.email.data, form.student_id.data, form.first_name.data, form.last_name.data, time_added, confirmation_token, False)
+        Member.get_or_create(form.student_id.data, form.email.data, form.first_name.data, form.last_name.data)
 
         # Redirect to email_sent page
-        return redirect(url_for('email_sent', email=form.email.data))
+        return redirect(url_for('views.email_sent', email=form.email.data))
     
     # Render form template when method is GET, or form is not valid
     return render_template("join.html", form=form)
 
-@app.route("/email_sent")
+@views_blueprint.route("/email_sent")
 def email_sent():
     email = request.args.get('email')
     if not email:
         abort(400)
         abort(Response('Missing email'))
     msg = 'An email has been sent to %s to confirm your membership'
+    # TODO: Send confirmation email here
     return render_template("template.html", title="Success", main=msg%(email))
 
-@app.route("/confirm")
+@views_blueprint.route("/confirm")
 def confirm():
+    student_id = request.args.get('id')
     token = request.args.get('confirmation_token')
-    if not token:
+    if not token or not student_id:
         abort(400)
-        abort(Response('Missing confirmation token'))
-    message = _confirm_member(token)
+        abort(Response('Missing student id or confirmation token'))
+
+    member = Member.query.get(int(student_id))
+    if not member:
+        abort(400)
+        abort(Response("Invalid student id"))
+
+    status, message = member.confirm(token)
     return render_template("template.html", title="Membership confirmation", main=message)
