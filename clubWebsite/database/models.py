@@ -1,10 +1,10 @@
+"""Database ORM models"""
 import datetime
 import secrets
-from logging import getLogger
 from clubWebsite.database import db
 
 class Member(db.Model):
-    """Member of the club who has registered"""
+    """Member of the club who has signed up"""
     __tablename__ = 'members'
     student_id = db.Column(db.Integer, nullable=False, index=True, primary_key=True) #: Student's ID number (900xxxxxxx)
     email = db.Column(db.String(128), nullable=False, index=True)                    #: Student's e-mail address (@my.vcccd.edu)
@@ -13,9 +13,9 @@ class Member(db.Model):
     time_added = db.Column(db.DateTime(), default=datetime.datetime.utcnow)          #: Datetime (in UTC) when the registration occurred
     confirmation_token = db.Column(db.String(64))                                    #: Generated confirmation token
     confirmation_time = db.Column(db.DateTime())                                     #: When the confirmation token was sent (used to calculate token expiry)
-    is_confirmed = db.Column(db.Boolean(),default=False)                             #: Boolean flag, is True once the student has confirmed their membership
+    is_confirmed = db.Column(db.Boolean(), default=False)                            #: Boolean flag, is True once the student has confirmed their membership
 
-    def __init__(self, student_id, email,  first_name, last_name, **kwargs):
+    def __init__(self, student_id, email, first_name, last_name, **kwargs):
         self.email = email
         self.student_id = student_id
         self.first_name = first_name
@@ -23,12 +23,17 @@ class Member(db.Model):
         super(Member, self).__init__(**kwargs)
 
     def __repr__(self):
-        return "<Member {}, {}, {}>".format(self.student_id, self.first_name, "Confirmed" if self.is_confirmed else "Not Confirmed")
+        status = "Confirmed" if self.is_confirmed else "Not Confirmed"
+        return "<Member {}, {}, {}>".format(self.student_id, self.first_name, status)
 
     @staticmethod
     def get_or_create(student_id, email, first_name, last_name, **kwargs):
+        """
+        Get the given member (by student ID) if it exists in the database,
+        otherwise create a new Member with the given parameters
+        """
         current_member = Member.query.get(student_id)
-        if current_member: 
+        if current_member:
             return current_member
         else:
             new_member = Member(student_id, email, first_name, last_name, **kwargs)
@@ -38,14 +43,13 @@ class Member(db.Model):
 
     @staticmethod
     def prune_expired(expire_delta=48):
-        """Delete members who haven't confirmed their e-mails within expire_delta"""
+        """Delete members who haven't confirmed their e-mails within expire_delta hours"""
         delete_ids = []
         for member in Member.query.filter_by(is_confirmed=False).all():
             if member.has_token_expired(expire_delta):
                 delete_ids.append(member.student_id)
         Member.query.delete(delete_ids)
         db.session.commit()
-        
 
     def generate_confirmation_token(self):
         """Generates a confirmation token"""
@@ -53,7 +57,6 @@ class Member(db.Model):
         self.confirmation_time = datetime.datetime.utcnow()
         db.session.commit()
         return self.confirmation_token
-
 
     def confirm(self, confirmation_token, expire_delta=48):
         """
@@ -79,7 +82,7 @@ class Member(db.Model):
             return True, "Your membership has been confirmed"
         else:
             return False, "Confirmation token invalid, please try again"
-            
+
     def get_token_expire_time(self, expire_delta):
         """Get the time at which the confirmation token will expire """
         return self.confirmation_time + datetime.timedelta(hours=expire_delta)
@@ -89,4 +92,3 @@ class Member(db.Model):
         expire_time = self.get_token_expire_time(expire_delta)
         time_left = (expire_time - datetime.datetime.utcnow()).total_seconds()
         return time_left <= 0
-
