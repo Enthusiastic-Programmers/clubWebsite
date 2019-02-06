@@ -1,4 +1,5 @@
 import datetime
+import secrets
 from logging import getLogger
 from clubWebsite.database import db
 
@@ -27,7 +28,7 @@ class Member(db.Model):
     @staticmethod
     def get_or_create(student_id, email, first_name, last_name, **kwargs):
         current_member = Member.query.get(student_id)
-        if current_member:
+        if current_member: 
             return current_member
         else:
             new_member = Member(student_id, email, first_name, last_name, **kwargs)
@@ -46,8 +47,7 @@ class Member(db.Model):
         db.session.commit()
         
 
-    @staticmethod
-    def generate_confirmation_token():
+    def generate_confirmation_token(self):
         """Generates a confirmation token"""
         self.confirmation_token = secrets.token_urlsafe(nbytes=32)
         self.confirmation_time = datetime.datetime.utcnow()
@@ -82,11 +82,11 @@ class Member(db.Model):
             
     def get_token_expire_time(self, expire_delta):
         """Get the time at which the confirmation token will expire """
-        return self.confirmation_sent + datetime.timedelta(hours=expire_delta)
+        return self.confirmation_time + datetime.timedelta(hours=expire_delta)
 
     def has_token_expired(self, expire_delta):
         """Test if the current token has expired yet"""
         expire_time = self.get_token_expire_time(expire_delta)
-        time_left = expire_time - datetime.datetime.utcnow().total_seconds()
+        time_left = (expire_time - datetime.datetime.utcnow()).total_seconds()
         return time_left <= 0
 
