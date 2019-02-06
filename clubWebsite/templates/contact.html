@@ -2,19 +2,19 @@
 <html>
     <head>
         <title>Ethansiastic Programmers Anonymous</title>
-        <link rel="stylesheet" type="text/css" href="./stylesheets/ep-base.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/ep-base.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <header>
-            <a href="{{url_for('index')}}"><img src="./images/enthusiastic-logo.png" style="width:320px;"/></a>
+            <a href="{{url_for('views.index')}}"><img src="/static/images/enthusiastic-logo.png" style="width:320px;"/></a>
             <nav id="nav-bar">
                 <ul>
-                    <li><a href="{{url_for('index')}}">Home</a></li>
-                    <li><a href="{{url_for('faq')}}">FAQ</a></li>
-                    <li><a href="{{url_for('about')}}">About Ethan</a></li>
+                    <li><a href="{{url_for('views.index')}}">Home</a></li>
+                    <li><a href="{{url_for('views.faq')}}">FAQ</a></li>
+                    <li><a href="{{url_for('views.about')}}">About Ethan</a></li>
                     <li class="current-page"><a>Contact Info</a></li>
-                    <li><a href="{{url_for('join')}}">Join Club</a></li>
+                    <li><a href="{{url_for('views.join')}}">Join Club</a></li>
                 </ul>
             </nav>
         </header>
