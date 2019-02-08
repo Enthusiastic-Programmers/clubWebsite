@@ -2,25 +2,25 @@
 <html>
     <head>
         <title>Join club</title>
-        <link rel="stylesheet" type="text/css" href="./stylesheets/ep-base.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/ep-base.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <header>
-            <a href="{{url_for('index')}}"><img src="./images/enthusiastic-logo.png" style="width:320px;"/></a>
+            <a href="{{url_for('views.index')}}"><img src="/static/images/enthusiastic-logo.png" style="width:320px;"/></a>
             <nav id="nav-bar">
                 <ul>
-                    <li><a href="{{url_for('index')}}">Home</a></li>
-                    <li><a href="{{url_for('faq')}}">FAQ</a></li>
-                    <li><a href="{{url_for('about')}}">About Ethan</a></li>
-                    <li><a href="{{url_for('contact')}}">Contact Info</a></li>
+                    <li><a href="{{url_for('views.index')}}">Home</a></li>
+                    <li><a href="{{url_for('views.faq')}}">FAQ</a></li>
+                    <li><a href="{{url_for('views.about')}}">About Ethan</a></li>
+                    <li><a href="{{url_for('views.contact')}}">Contact Info</a></li>
                     <li class="current-page"><a>Join Club</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <form id="join-club" action="{{url_for('join')}}" method="POST">
+            <form id="join-club" action="{{url_for('views.join')}}" method="POST">
                 {{ form.hidden_tag() }}
                 <div>
                     {{ form.first_name.label() }}
