@@ -1,10 +1,10 @@
 img{
     /* Prevent image from being too big on mobile */
-    max-width:100vw;
+    max-width:100%;
 }
 
 body{
-    width:100vw;
+    width:100%;
     padding:0px;
     margin:0px;
 }
@@ -16,8 +16,8 @@ main{
 
 header{
     /* padding is used instead of width so background color expands to side of page */
-    padding-left:10vw;
-    padding-right:10vw;
+    padding-left:10%;
+    padding-right:10%;
 
     display:flex;
     background-color:green;
@@ -120,7 +120,7 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
 
     main{
         /* No margins on side of page */
-        width:100vw;
+        width:100%;
     }
 
     header{
