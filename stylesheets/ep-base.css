@@ -97,6 +97,10 @@ p.question-text {
 
 #join-club input[type=text], #join-club input[type=email]{
     width:250px;
+    height:1.5em;
+}
+#join-club input[type=submit]{
+    height:2em;
 }
 
 
