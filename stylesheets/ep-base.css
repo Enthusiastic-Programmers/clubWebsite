@@ -4,12 +4,23 @@ img{
 }
 
 body{
-    margin:auto;
+    width:100vw;
+    padding:0px;
+    margin:0px;
+}
+
+main{
+    margin:auto;    /* center it */
     width:80vw;
 }
 
 header{
+    /* padding is used instead of width so background color expands to side of page */
+    padding-left:10vw;
+    padding-right:10vw;
+
     display:flex;
+    background-color:green;
 }
 
     #nav-bar {
@@ -103,12 +114,15 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
         float:none !important;
     }
 
-    body{
+    main{
         /* No margins on side of page */
         width:100vw;
     }
 
     header{
+        /* No margins on side of page */
+        padding:0px;
+
         /* Put navbar below image */
         flex-direction: column;
         align-items:center;
