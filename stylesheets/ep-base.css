@@ -87,6 +87,12 @@ p.question-text {
     margin-bottom:5px;
 }
 
+#join-club{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+}
+
 #join-club > *{
     margin-top: 20px;
 }
@@ -101,6 +107,7 @@ p.question-text {
 }
 #join-club input[type=submit]{
     height:2em;
+    margin-bottom: 20px;
 }
 
 
@@ -129,6 +136,10 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
 
         /* Put navbar below image */
         flex-direction: column;
+        align-items:center;
+    }
+    #join-club{
+        /* Center inputs */
         align-items:center;
     }
 }
