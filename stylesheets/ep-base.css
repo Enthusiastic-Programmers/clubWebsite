@@ -20,6 +20,7 @@ header{
     padding-right:10%;
 
     display:flex;
+    align-items:center;
     background-color:green;
 }
 
@@ -136,7 +137,6 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
 
         /* Put navbar below image */
         flex-direction: column;
-        align-items:center;
     }
         #nav-bar ul{
             /* Ensure there's no wasted space between logo and navbar */
