@@ -129,6 +129,13 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
     main{
         /* No margins on side of page */
         width:100%;
+
+        /* But a bit of padding */
+        padding-left: 15px;
+        padding-right: 15px;
+
+        /* https://stackoverflow.com/questions/5219175/width-100-padding */
+        box-sizing: border-box;
     }
 
     header{
