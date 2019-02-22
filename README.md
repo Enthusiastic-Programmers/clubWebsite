@@ -136,14 +136,14 @@ After generating the migration script, you need to run
 
  13) Delete the existing contents of the WSGI Configuration File and replace it with:
  
-    ```
+    
     import sys
     path = '/home/<username>/clubWebsite'
     if path not in sys.path:
         sys.path.append(path)
 
     from wsgi import app as application  
-    ```
+    
     
  14) Save the WSGI Configuration File, and click the Reload button to reload the site configuration
 
@@ -165,6 +165,6 @@ After generating the migration script, you need to run
 
  4) Close the console
 
-    `exit
+    `exit`
 
  5) Reload the web app
