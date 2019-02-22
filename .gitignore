@@ -3,5 +3,5 @@ __pycache__/
 data/
 
 # Virtual Environments
-*env*
+*venv*
 *.db
