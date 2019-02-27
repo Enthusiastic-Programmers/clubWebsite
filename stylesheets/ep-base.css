@@ -7,6 +7,7 @@ body{
     width:100%;
     padding:0px;
     margin:0px;
+    background-color: rgb(220, 220, 220);
 }
 
 main{
@@ -71,7 +72,7 @@ header{
 
 
 div.faq-block {
-    background-color: bisque;
+    background-color: rgb(140,140, 140);
     padding: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
