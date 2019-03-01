@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link href="/static/images/favicon.ico" type="image/x-icon" rel="icon">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/ep-base.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <header>
+            <a href="{{url_for('views.index')}}"><img src="/static/images/EPFinal.png" style="width:320px;"/></a>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="{{url_for('views.index')}}">Home</a></li>
+                    <li><a href="{{url_for('views.faq')}}">FAQ</a></li>
+                    <li><a href="{{url_for('views.about')}}">About Us</a></li>
+                    <li><a href="{{url_for('views.join')}}">Join Club</a></li>
+
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            {{main}}
+        </main>
+    </body>
+</html>

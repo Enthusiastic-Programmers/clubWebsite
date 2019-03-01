@@ -2,19 +2,21 @@
 <html>
     <head>
         <title>Ethansiastic Programmers Anonymous</title>
-        <link rel="stylesheet" type="text/css" href="./stylesheets/ep-base.css"/>
-        <link href="./images/favicon.ico" type="image/x-icon" rel="icon">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/ep-base.css"/>
+        <link href="/static/images/favicon.ico" type="image/x-icon" rel="icon">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/ep-base.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <header>
-            <a href="./index.html"><img src="./images/EPFinal.png" style="width:320px;"/></a>
+            <a href="{{url_for('views.index')}}"><img src="/static/images/EPFinal.png" style="width:320px;"/></a>
             <nav id="nav-bar">
                 <ul>
                     <li class="current-page"><a>Home</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="join.html">Join Club</a></li>
+                    <li><a href="{{url_for('views.faq')}}">FAQ</a></li>
+                    <li><a href="{{url_for('views.about')}}">About Us</a></li>
+                    <li><a href="{{url_for('views.join')}}">Join Club</a></li>
+
                 </ul>
             </nav>
         </header>
@@ -94,7 +96,7 @@
                    </ul>
                     </p>              
                      <p> Image Gallery </p>
-                <img src="images/HackHarvardGroup.jpg" alt="Hack Harvard Baby" style="text-align:center;width:500px"/>
+                <img src="/static/images/HackHarvardGroup.jpg" alt="Hack Harvard Baby" style="text-align:center;width:500px"/>
                <p> &copy;2019 Enthusiastic Programmers </p>
             </div>
         </main>

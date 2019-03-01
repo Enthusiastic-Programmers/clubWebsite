@@ -2,19 +2,20 @@
 <html>
     <head>
         <title>Ethansiastic Programmers Anonymous</title>
-        <link rel="stylesheet" type="text/css" href="./stylesheets/ep-base.css"/>
-        <link href="./images/favicon.ico" type="image/x-icon" rel="icon">
+        <link href="/static/images/favicon.ico" type="image/x-icon" rel="icon">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/ep-base.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <header>
-            <a href="./index.html"><img src="./images/EPFinal.png" style="width:320px;"/></a>
+            <a href="{{url_for('views.index')}}"><img src="/static/images/EPFinal.png" style="width:320px;"/></a>
             <nav id="nav-bar">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="{{url_for('views.index')}}">Home</a></li>
+                    <li><a href="{{url_for('views.faq')}}">FAQ</a></li>
                     <li class="current-page"><a>About Us</a></li>
-                    <li><a href="join.html">Join Club</a></li>
+                    <li><a href="{{url_for('views.join')}}">Join Club</a></li>
+
                 </ul>
             </nav>
         </header>
@@ -22,8 +23,8 @@
         <main>
             <figure class="ethan-image">
                 <h2 style="text-decoration:underline;">Do you know this man??!?</h2>
-                <a href="about.html">
-                    <img src="./images/this-is-ethan.png" alt="Our boi Ethan with some loot" style="width:450px"/>
+                <a href="{{url_for('views.about')}}">
+                    <img src="/static/images/this-is-ethan.png" alt="Our boi Ethan with some loot" style="width:450px"/>
                 </a>
                 <p class="basic-font" style="text-align:center;">Just take a look at that loot! WOW!</p>
                 <p class="basic-font" style="text-align:center;font-size:32px">This is a man that knows what he likes</p>
@@ -60,7 +61,7 @@
                     from his bothersome followers' questions and attention. The following is a graph showing the amount of disappointment 
                     accrued from Ethan's dismissal:
                 </p>
-                <img src="images/graph-ethan-dismissal.png" alt="Very disappointing numbers in exponential form" style="text-align:center;width:500px"/>
+                <img src="/static/images/graph-ethan-dismissal.png" alt="Very disappointing numbers in exponential form" style="text-align:center;width:500px"/>
             </div>
         </main>
     </body>

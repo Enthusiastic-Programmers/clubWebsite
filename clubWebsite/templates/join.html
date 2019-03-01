@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Join club</title>
+        <link href="/static/images/favicon.ico" type="image/x-icon" rel="icon">
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/ep-base.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <header>
+            <a href="{{url_for('views.index')}}"><img src="/static/images/EPFinal.png" style="width:320px;"/></a>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="{{url_for('views.index')}}">Home</a></li>
+                    <li><a href="{{url_for('views.faq')}}">FAQ</a></li>
+                    <li><a href="{{url_for('views.about')}}">About Us</a></li>
+
+                    <li class="current-page"><a>Join Club</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <form id="join-club" action="{{url_for('views.join')}}" method="POST">
+                {{ form.hidden_tag() }}
+                <div>
+                    {{ form.first_name.label() }}
+                    {{ form.first_name() }}
+                    {% for error in form.first_name.errors %}
+                        <small style="color: red">
+                            {{ error }}
+                        </small> 
+                    {% endfor %}
+                </div>
+                <div>
+                    {{ form.last_name.label() }}
+                    {{ form.last_name() }}
+                    {% for error in form.last_name.errors %}
+                        <small style="color: red">
+                            {{ error }}
+                        </small> 
+                    {% endfor %}
+                </div>
+                <div>
+                    {{ form.student_id.label() }}
+                    {{ form.student_id() }}
+                    {% for error in form.student_id.errors %}
+                        <small style="color: red">
+                            {{ error }}
+                        </small> 
+                    {% endfor %}
+                </div>
+                <div>
+                    {{ form.email.label() }}
+                    {{ form.email() }}
+                    {% for error in form.email.errors %}
+                        <small style="color: red">
+                            {{ error }}
+                        </small> 
+                    {% endfor %}
+                </div>
+                {{ form.submit() }}
+            </form>
+        </main>
+    </body>
+</html>
