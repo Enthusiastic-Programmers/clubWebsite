@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {{ title if title else  "Enthusiastic Programmers"}}
+        </title>
+        <link href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon" rel="icon">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/ep-base.css') }}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <a href="{{url_for('views.index')}}">
+                <img src="{{ url_for('static', filename='images/EPFinal.png') }}" style="width:320px;"/>
+            </a>
+            <nav id="nav-bar">
+                <ul>
+                    <li class="{% if request.endpoint == 'views.index' %} current-page {% endif %}">
+                        <a href="{{ url_for('views.index') }}">
+                            Home
+                        </a>
+                    </li>
+                    <li class="{% if request.endpoint == 'views.faq' %} current-page {% endif %}">
+                        <a href="{{ url_for('views.faq') }}">
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="{% if request.endpoint == 'views.about' %} current-page {% endif %}">
+                        <a href="{{ url_for('views.about') }}">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="{% if request.endpoint == 'views.join' %} current-page {% endif %}">
+                        <a href="{{ url_for('views.join') }}">
+                            Join Club
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            {% with messages = get_flashed_messages() %} 
+                {% if messages %} 
+                    {% for message in messages %}
+                        <div class="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %} 
+                {% endif %} 
+            {% endwith %}
+
+            {% block main %}
+
+            {% endblock %}
+        </main>
+    </body>
+</html>

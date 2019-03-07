@@ -4,7 +4,7 @@ import html
 import urllib
 from werkzeug import unescape
 
-from flask import Blueprint, render_template, send_from_directory, request, redirect, url_for, abort, Response
+from flask import Blueprint, render_template, send_from_directory, request, redirect, url_for, abort, Response, flash
 
 from clubWebsite.forms import RegisterForm
 from clubWebsite.database.models import Member
@@ -50,9 +50,11 @@ def email_sent():
     if not email:
         abort(400)
         abort(Response('Missing email'))
-    msg = 'An email has been sent to %s to confirm your membership'
+    msg = 'An email has been sent to %s to confirm your membership' % email
     # TODO: Send confirmation email here
-    return render_template("template.html", title="Success", main=msg%(email))
+    
+    flash(msg)
+    return render_template("base.html", title="Registered")
 
 @views_blueprint.route("/confirm")
 def confirm():
@@ -68,4 +70,6 @@ def confirm():
         abort(Response("Invalid student id"))
 
     status, message = member.confirm(token)
-    return render_template("template.html", title="Membership confirmation", main=message)
+
+    flash(message)
+    return render_template("base.html", title="Membership confirmation")
