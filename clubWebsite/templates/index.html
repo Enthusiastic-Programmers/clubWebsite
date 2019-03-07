@@ -1,38 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Ethansiastic Programmers Anonymous</title>
-        <link rel="stylesheet" type="text/css" href="/static/stylesheets/ep-base.css"/>
-        <link href="/static/images/favicon.ico" type="image/x-icon" rel="icon">
-        <link rel="stylesheet" type="text/css" href="/static/stylesheets/ep-base.css"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
-    <body>
-        <header>
-            <a href="{{url_for('views.index')}}"><img src="/static/images/EPFinal.png" style="width:320px;"/></a>
-            <nav id="nav-bar">
-                <ul>
-                    <li class="current-page"><a>Home</a></li>
-                    <li><a href="{{url_for('views.faq')}}">FAQ</a></li>
-                    <li><a href="{{url_for('views.about')}}">About Us</a></li>
-                    <li><a href="{{url_for('views.join')}}">Join Club</a></li>
-
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-           <div class="ethan-info">
-                <p>
-                        <span style="font-size:28px">Welcome to Enthusiastic Programmers! </span>This is our club's official website for an all inclusive place for information, announcments, event details, links, images and more!
-                    </p>
-            <p> I'm sure you're wondering who we are. Well here is a few questions you can ask us: </p>
-                    <ul style="list-style-type:square;">
-                        <li>What do we do in club meetings?</li>
-                        <li>What have we done as a club?</li>
-                        <li>What we plan to do in the future as a club?</li>
-                        <li>What are hacakthons?</li>
-                    </ul>
+{% extends "base.html" %}
+{% block main %}    
+<div class="ethan-info">
+    <p>
+        <span style="font-size:28px">Welcome to Enthusiastic Programmers! </span>This is our club's official website for an all inclusive place for information, announcments, event details, links, images and more!
+    </p>
+    <p> I'm sure you're wondering who we are. Well here is a few questions you can ask us: </p>
+        <ul style="list-style-type:square;">
+            <li>What do we do in club meetings?</li>
+            <li>What have we done as a club?</li>
+            <li>What we plan to do in the future as a club?</li>
+            <li>What are hacakthons?</li>
+        </ul>
     <p>	<!---------------------------------->
                 <!-- All hackathons split in its own paragraph, talk about DevFest both years. Talk about ACM competition and problems, each project idea and overview, fill out other pages-->
                         We are Enthusiastic Programmers at Moorpark College. This website is for any information about our club from announcments to event logistics; Come join our discord server too. We are a big group of young to older college students pursuing our passion of Computer Science. This past year of 2018/2019 has been amazing as we have met many new students, worked on projects, and attended many events,most called Hackathons where hunderds of students around the globe come together to bring ideas to life in a short span of 24 to 48 hours. A few of the hackathons that we have gone to in the fall semester include SDHacks, CalHacks, HackHarvard,  and SacHacks. Another enjoyable event we went to was DevFest LA, where several educational talks took place and raffle prizes were won. Another event where we try to compete at is the National ACM competition, where this past year our one team had placed 2nd out of all community colleges! Our club has three mettings ever week, Monday, Wednedsay, and Thursday from around 3p.m. - 6p.m. in the room LMC-121. It is open for any help or questions, and to plan events and any future projects. Anyone is welcome, no experience is needed at all! We hope to see some new people there. 
@@ -96,9 +74,7 @@
                    </ul>
                     </p>              
                      <p> Image Gallery </p>
-                <img src="/static/images/HackHarvardGroup.jpg" alt="Hack Harvard Baby" style="text-align:center;width:500px"/>
+                <img src="{{ url_for('static', filename='images/HackHarvardGroup.jpg') }}" alt="Hack Harvard Baby" style="text-align:center;width:500px"/>
                <p> &copy;2019 Enthusiastic Programmers </p>
             </div>
-        </main>
-    </body>
-</html>
+{% endblock %}

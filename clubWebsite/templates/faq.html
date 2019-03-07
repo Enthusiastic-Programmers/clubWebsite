@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Ethansiastic Programmers Anonymous</title>
-        <link href="/static/images/favicon.ico" type="image/x-icon" rel="icon">
-        <link rel="stylesheet" type="text/css" href="/static/stylesheets/ep-base.css"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
-    <body>
-        <header>
-            <a href="{{url_for('views.index')}}"><img src="/static/images/EPFinal.png" style="width:320px;"/></a>
-
-            <nav id="nav-bar">
-                <ul>
-                    <li><a href="{{url_for('views.index')}}">Home</a></li>
-                    <li class="current-page"><a>FAQ</a></li>
-                    <li><a href="{{url_for('views.about')}}">About Us</a></li>
-                    <li><a href="{{url_for('views.contact')}}">Join Club</a></li>
-
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <h4>This is a page of frequently asked questions; hopefully it answers yours.</h4>
-            <div class="faq-block">
-                <p class="question-text">Q: What is this website actually for?</p>
-                <p class="answer-text">A: We don't really have a clue. Sorry.</p>
-            </div>
-        </main>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block main %}
+<h4>This is a page of frequently asked questions; hopefully it answers yours.</h4>
+<div class="faq-block">
+    <p class="question-text">Q: What is this website actually for?</p>
+    <p class="answer-text">A: We don't really have a clue. Sorry.</p>
+</div>
+{% endblock %}
