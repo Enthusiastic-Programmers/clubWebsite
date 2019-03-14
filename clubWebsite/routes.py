@@ -14,7 +14,8 @@ views_blueprint = Blueprint('views', __name__, template_folder='templates')
 @views_blueprint.route("/")
 def index():
     return render_template("index.html")
-
+ 
+ #change this to hack.html
 @views_blueprint.route("/faq")
 def faq():
     return render_template("faq.html")
@@ -23,6 +24,7 @@ def faq():
 def about():
     return render_template("about.html")
 
+#change this to calendar.html
 @views_blueprint.route("/contact")
 def contact():
     return render_template("contact.html")
