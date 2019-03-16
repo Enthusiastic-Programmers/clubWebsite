@@ -7,7 +7,6 @@ body{
     width:100%;
     padding:0px;
     margin:0px;
-    background-color: rgb(220, 220, 220);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
     background-image: linear-gradient(to bottom, white 20% , rgb(140, 140, 140));
@@ -66,10 +65,15 @@ header{
     text-decoration: overline;
 }
 
-table, th, td {
+table, th, td{
     border: 1px solid black; 
     text-align: center;                     
 } 
+
+p.cr{
+    position: fixed; 
+    bottom: 20px;
+}
 
 
 .ethan-image{
