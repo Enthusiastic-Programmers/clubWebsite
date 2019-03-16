@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block main %}
+<!-- #{
 <figure class="ethan-image">
     <h2 style="text-decoration:underline;">Do you know this man??!?</h2>
     <a href="{{url_for('views.about')}}">
@@ -42,5 +43,31 @@
         accrued from Ethan's dismissal:
     </p>
     <img src="{{ url_for('static', filename='images/graph-ethan-dismissal.png') }}" alt="Very disappointing numbers in exponential form" style="text-align:center;width:500px"/>
+</div> 
+#} -->
+
+
+
+<h4>This is a page about us. Here are some quick FAQ's; hopefully it answers yours. Also meet the creators behind the programming and design of the whole website.</h4>
+<div class="faq-block">
+    <p class="question-text">Q: What is this website actually for?</p>
+    <p class="answer-text">A: To showcase and inform others about moorparks amazing clubs</p>           
 </div>
+<br/> 
+<div class="faq-block">
+        <p><span style="font-size: 30px">ENTHUSIASTIC PROGRAMMERS CLUB OFFICIALS</span> </p>
+        <p> Ethan Bonavida: President of Enthusiastic Programmers </p>
+        <p> Kai Hsieh: Vice President Enthusiastic Programmers </p>
+        <p> Chris Loewenthal: Secretary of Enthusiastic Programmers </p> 
+        <p> Treasure Chest: Treasurer of Enthusiastic Programmers </p>                   
+    </div>
+    <br/> 
+<div class="faq-block">
+    <p><span style="font-size: 30px">MEET THE TEAM</span> </p>
+    <p> Ethan Bonavida: President of producing and design </p>
+    <p> James Taylor: Co-Lead programmer and designer </p>
+    <p> Roger Fachini: Co-Lead programmer and designer </p>
+    <p> Benjamin Hiebert: Lead Main King Meme producer, designer, programmer and memer </p>
+</div>
+<p> &copy;2019 Enthusiastic Programmers </p>
 {% endblock %}
