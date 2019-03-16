@@ -25,9 +25,9 @@ def about():
     return render_template("about.html")
 
 
-# @views_blueprint.route("/calendar")
-# def calendar():
-#     return render_template("calendar.html")
+@views_blueprint.route("/calendar")
+def calendar():
+    return render_template("calendar.html")
 
 @views_blueprint.route("/join", methods=['GET','POST'])
 def join():

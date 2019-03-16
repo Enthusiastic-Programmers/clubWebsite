@@ -27,43 +27,48 @@ header{
     background-color:green;
 }
 
-    #nav-bar {
-        width: 100%;
-        flex-grow:1;
-    }
-        #nav-bar ul{
-            display:flex;
-            flex-wrap: wrap;
-            justify-content:center;
-            padding:6px;
-            list-style-type: none;
-        }
-            #nav-bar li{
-                flex-grow:1;
+#nav-bar {
+    width: 100%;
+    flex-grow:1;
+}
+#nav-bar ul{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    padding:6px;
+    list-style-type: none;
+}
+#nav-bar li{
+    flex-grow:1;
 
-                background-color:#eeeeee;
-                border-color:#e5e5e5;
+    background-color:#eeeeee;
+    border-color:#e5e5e5;
 
-                border-width: 2px;
-                border-radius: 6px;
+    border-width: 2px;
+    border-radius: 6px;
 
 
 
-                margin-left: 5px;
-                margin-top: 5px;
-                margin-bottom: 5px;
-                text-align: center;
-            }
-                #nav-bar li a{
-                    padding:10px;
-                    display:block;
-                    text-decoration: none;
-                    color: black;
-                }
-        #nav-bar li:not(.current-page):hover{
-            background-color: #cecece;
-            text-decoration: overline;
-        }
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+#nav-bar li a{
+    padding:10px;
+    display:block;
+    text-decoration: none;
+    color: black;
+}
+#nav-bar li:not(.current-page):hover{
+    background-color: #cecece;
+    text-decoration: overline;
+}
+
+table, th, td {
+    border: 1px solid black; 
+    text-align: center;                     
+} 
 
 
 .ethan-image{

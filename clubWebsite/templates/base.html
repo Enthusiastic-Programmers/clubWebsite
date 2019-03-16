@@ -35,12 +35,12 @@
                         </a>
                     </li>
 
-                    {# <li class="{% if request.endpoint == 'views.calendar' %} current-page {% endif %}">
+                     <li class="{% if request.endpoint == 'views.calendar' %} current-page {% endif %}">
                         <a href="{{ url_for('views.calendar') }}">
                             Event calendar 
                         </a>
                     </li> 
-                    #}
+                    
 
                     <li class="{% if request.endpoint == 'views.join' %} current-page {% endif %}">
                         <a href="{{ url_for('views.join') }}">
