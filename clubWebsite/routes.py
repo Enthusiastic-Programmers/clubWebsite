@@ -15,19 +15,19 @@ views_blueprint = Blueprint('views', __name__, template_folder='templates')
 def index():
     return render_template("index.html")
  
- #change this to hack.html
-@views_blueprint.route("/faq")
-def faq():
-    return render_template("faq.html")
+
+@views_blueprint.route("/hack")
+def hack():
+    return render_template("hack.html")
 
 @views_blueprint.route("/about")
 def about():
     return render_template("about.html")
 
-#change this to calendar.html
-@views_blueprint.route("/contact")
-def contact():
-    return render_template("contact.html")
+
+# @views_blueprint.route("/calendar")
+# def calendar():
+#     return render_template("calendar.html")
 
 @views_blueprint.route("/join", methods=['GET','POST'])
 def join():

@@ -22,16 +22,26 @@
                             Home
                         </a>
                     </li>
-                    <li class="{% if request.endpoint == 'views.faq' %} current-page {% endif %}">
-                        <a href="{{ url_for('views.faq') }}">
-                            FAQ
-                        </a>
-                    </li>
+                    
                     <li class="{% if request.endpoint == 'views.about' %} current-page {% endif %}">
                         <a href="{{ url_for('views.about') }}">
-                            About Us
+                            About 
                         </a>
                     </li>
+
+                    <li class="{% if request.endpoint == 'views.hack' %} current-page {% endif %}">
+                        <a href="{{ url_for('views.hack') }}">
+                            Hackathons
+                        </a>
+                    </li>
+
+                    {# <li class="{% if request.endpoint == 'views.calendar' %} current-page {% endif %}">
+                        <a href="{{ url_for('views.calendar') }}">
+                            Event calendar 
+                        </a>
+                    </li> 
+                    #}
+
                     <li class="{% if request.endpoint == 'views.join' %} current-page {% endif %}">
                         <a href="{{ url_for('views.join') }}">
                             Join Club
