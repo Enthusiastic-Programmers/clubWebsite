@@ -5,7 +5,7 @@ The purpose is to have a website for the club for easy sign up, and easy access 
 We.Love.Hackathons.
 
 
-Link to website: https://enthusiastic-programmers.github.io/clubWebsite/
+Link to website: https://epclub.pythonanywhere.com/
 
 ## Setting up a development environment
 
