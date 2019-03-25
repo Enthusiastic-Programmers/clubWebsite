@@ -2,6 +2,11 @@
 {% block main %}
 <form id="join-club" action="{{url_for('views.join')}}" method="POST">
     {{ form.hidden_tag() }}
+    <p> Choose which club:
+    <select>
+        <option value="clubName">Enthusiastic Programmers Club </option>
+    </select>
+</p>
     <div>
         {{ form.first_name.label() }}
         {{ form.first_name() }}
