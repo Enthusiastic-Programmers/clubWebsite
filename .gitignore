@@ -5,3 +5,6 @@ data/
 # Virtual Environments
 *venv*
 *.db
+
+.env
+sendgrid.env

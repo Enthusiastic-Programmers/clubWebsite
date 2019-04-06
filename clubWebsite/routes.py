@@ -32,13 +32,16 @@ def calendar():
 @views_blueprint.route("/join", methods=['GET','POST'])
 def join():
     # Initialize form and check if it is valid
-    form = RegisterForm() 
+    form = RegisterForm(csrf_enabled=False)
     valid = form.validate_on_submit()
 
     # On form submission with valid input
     if request.method == 'POST' and valid:
         #print(form.email.data, form.student_id.data, form.first_name.data, form.last_name.data, time_added, confirmation_token, False)
-        Member.get_or_create(form.student_id.data, form.email.data, form.first_name.data, form.last_name.data)
+        member = Member.get_or_create(form.student_id.data, form.email.data, form.first_name.data, form.last_name.data)
+        if member is None:
+            abort(500)
+            abort(Response('Failed to send confirmation email. Please try again.'))
 
         # Redirect to email_sent page
         return redirect(url_for('views.email_sent', email=form.email.data))

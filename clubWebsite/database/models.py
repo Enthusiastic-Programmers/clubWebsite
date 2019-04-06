@@ -1,6 +1,12 @@
 """Database ORM models"""
 import datetime
 import secrets
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from flask import url_for
+import flask
+
 from clubWebsite.database import db
 
 class Member(db.Model):
@@ -39,6 +45,23 @@ class Member(db.Model):
             new_member = Member(student_id, email, first_name, last_name, **kwargs)
             db.session.add(new_member)
             db.session.commit()
+
+            confirmation_token = new_member.generate_confirmation_token()
+            confirmation_link = flask.request.url_root.rstrip('/') + url_for('views.confirm', id=student_id, confirmation_token=confirmation_token)
+            message = Mail(
+                from_email='no-reply@epclub.pythonanywhere.com',
+                to_emails=email,
+                subject='Club membership confirmation',
+                html_content='Click this link to confirm your membership: <a href="' + confirmation_link + '">' + confirmation_link + '</a>'
+            )
+
+            try:
+                sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+                response = sg.send(message)
+            except Exception as e:
+                print(e.message)
+                return None
+
             return new_member
 
     @staticmethod
