@@ -51,23 +51,31 @@
 <h4>This is a page about us. Here are some quick FAQ's; hopefully it answers yours. Also meet the creators behind the programming and design of the whole website.</h4>
 <div class="faq-block">
     <p class="question-text">Q: What is this website actually for?</p>
-    <p class="answer-text">A: To showcase and inform others about moorparks amazing clubs</p>           
+    <p class="answer-text">A: To showcase and inform others about Moorpark College's amazing clubs</p>           
 </div>
 <br/> 
 <div class="faq-block">
         <p><span style="font-size: 30px">ENTHUSIASTIC PROGRAMMERS CLUB OFFICIALS</span> </p>
-        <p> Ethan Bonavida: President of Enthusiastic Programmers </p>
+        <p> Ethan Bonavida: President of Enthusiastic Programmers 
+        <img src="{{ url_for('static', filename='images/this-is-ethan.png') }}"  style="width:150px"/> </p>
         <p> Kai Hsieh: Vice President Enthusiastic Programmers </p>
-        <p> Chris Loewenthal: Secretary of Enthusiastic Programmers </p> 
-        <p> Treasure Chest: Treasurer of Enthusiastic Programmers </p>                   
+        <p> Chris Loewenthal: Secretary of Enthusiastic Programmers 
+        <img src="{{ url_for('static', filename='images/chris.jpg') }}"  style="width:95px"/> </p>
+        <p> Treasure Chest: Treasurer of Enthusiastic Programmers 
+                <img src="{{ url_for('static', filename='images/treasure.jpg') }}"  style="width:150px"/> </p>
+        </p>                   
     </div>
     <br/> 
 <div class="faq-block">
     <p><span style="font-size: 30px">MEET THE TEAM</span> </p>
-    <p> Ethan Bonavida: President of producing and design </p>
-    <p> James Taylor: Co-Lead programmer and designer </p>
-    <p> Roger Fachini: Co-Lead programmer and designer </p>
-    <p> Benjamin Hiebert: Lead Main King Meme producer, designer, programmer and memer </p>
+    <p> Ethan Bonavida: President of production and design 
+    <img src="{{ url_for('static', filename='images/this-is-ethan.png') }}"  style="width:150px"/> </p>
+    <p> James Taylor: Co-Lead programmer and designer 
+    <img src="{{ url_for('static', filename='images/james.jpg') }}"  style="width:95px"/></p>
+    <p> Roger Fachini: Co-Lead programmer and designer
+            <img src="{{ url_for('static', filename='images/roger.jpg') }}"  style="width:150px"/> </p>
+    <p> Benjamin Hiebert: Lord Meme producer, designer, programmer and memer 
+            <img src="{{ url_for('static', filename='images/ben.jpg') }}"  style="width:150px"/> </p>
 </div>
 <p class="cr"> &copy;2019 Enthusiastic Programmers </p>
 {% endblock %}
