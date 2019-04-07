@@ -2,6 +2,7 @@
 import datetime
 import secrets
 import os
+import traceback
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 from flask import url_for
@@ -56,10 +57,11 @@ class Member(db.Model):
             )
 
             try:
-                sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+                key = os.environ['SENDGRID_API_KEY']
+                sg = SendGridAPIClient(key)
                 response = sg.send(message)
             except Exception as e:
-                print(e.message)
+                traceback.print_exc()
                 return None
 
             return new_member
