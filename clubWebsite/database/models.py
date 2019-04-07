@@ -9,6 +9,7 @@ from flask import url_for
 import flask
 
 from clubWebsite.database import db
+from clubWebsite.config import BaseConfig
 
 class Member(db.Model):
     """Member of the club who has signed up"""
@@ -57,7 +58,10 @@ class Member(db.Model):
             )
 
             try:
-                key = os.environ['SENDGRID_API_KEY']
+                key = BaseConfig.SENDGRID_API_KEY
+                if key is None:
+                    print("Confirmation email for %s failed. Missing SENDGRID_API_KEY." % first_name)
+                    return None
                 sg = SendGridAPIClient(key)
                 response = sg.send(message)
             except Exception as e:
