@@ -32,7 +32,7 @@ def calendar():
 @views_blueprint.route("/join", methods=['GET','POST'])
 def join():
     # Initialize form and check if it is valid
-    form = RegisterForm(csrf_enabled=False)
+    form = RegisterForm(meta={'csrf':False})
     valid = form.validate_on_submit()
 
     # On form submission with valid input
