@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+img{
+    /* Prevent image from being too big on mobile */
+    max-width:100%;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    padding:0px;
+    margin:0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    
+}
+
+
+main{
+    background-color: rgb(6,16,54);
+}
+
+
+    .intro{
+        /*background-color: lightblue;*/
+        background-color: white;
+        background-image: url("./mountain.svg");
+        background-size:cover;
+        min-height:100vh;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+        .intro-container{
+            flex-grow: 0;
+            text-align:center;
+            background-color:rgba(255,255,255,0.8); /* done this way to prevent opacity applying to children */
+            height:400px;
+            width:600px;
+            padding:20px;
+            border-width:2px;
+            border-style:inset;
+            border-radius:10px;
+            display:flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        @media (max-width:600px){
+            .intro-container{
+                width:100%;
+            }
+        }
+        @media (max-height:400px){
+            .intro-container{
+                height:100%;
+            }
+        }
+            .apply-button{
+                padding:20px;
+                color:white;
+                background-color: rgb(226, 40, 11);
+                font-size:30px;
+                border-radius:10px;
+                margin-top:auto;  /* place it at bottom of container */
+            }
+
+
+    .boxes{
+        margin:auto;    /* center it */
+        width:80vw;
+
+        display:flex;
+        flex-direction:column;
+        
+    }
+
+        .info-box:first-child{
+            margin-top:50px;
+        }
+        .info-box{
+
+            flex-basis: 300px;
+            margin-bottom:300px;
+            
+            display:flex;
+
+            flex-direction:column;
+        }
+
+        /*.info-box:last-child{
+            margin-bottom:0px;
+        }*/
+
+            .info-box-heading{
+                background-color: rgb(226, 40, 11);
+                padding: 15px;
+                color: white;
+                align-self: start;
+                min-width:100px;
+            }
+            .info-box-content{
+                background-color:white;
+                flex-grow:1;
+                padding:30px;
+            }
+
+header{
+    /* padding is used instead of width so background color expands to side of page */
+    padding-left:10%;
+    padding-right:10%;
+
+    display:flex;
+    align-items:center;
+    background-color:green;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile media queries. At end of document so it overrides any other rules
+https://stackoverflow.com/questions/10262082/css-media-queries-and-important
+*/
+/* max-device-width is not recommended:
+https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-max-width
+*/
+@media (max-width:43em){
+    figure{
+        margin-left:0px;
+        margin-right:0px;
+        /* Floating doesn't work well on small screens */
+        float:none !important;
+    }
+
+    .boxes{
+        /* No margins on side of page */
+        width:100%;
+
+        /* But a bit of padding */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    header{
+        /* No margins on side of page */
+        padding:0px;
+
+        /* Put navbar below image */
+        flex-direction: column;
+    }
+
+}
