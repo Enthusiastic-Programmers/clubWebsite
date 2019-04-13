@@ -3,7 +3,7 @@ from wtforms import validators, ValidationError
 from wtforms.fields import TextField, SubmitField
 from wtforms.fields.html5 import EmailField
 
-class RegisterForm(FlaskForm):
+class RegistrationForm(FlaskForm):
    first_name = TextField("First Name", [validators.DataRequired()])
    
    last_name = TextField("Last Name", [validators.DataRequired()])

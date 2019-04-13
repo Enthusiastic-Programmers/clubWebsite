@@ -11,7 +11,7 @@ from sendgrid.helpers.mail import Mail
 
 from flask import Blueprint, render_template, send_from_directory, request, redirect, url_for, abort, Response, flash
 
-from clubWebsite.forms import RegisterForm
+from clubWebsite.forms import RegistrationForm
 from clubWebsite.database.models import Member
 from clubWebsite.config import BaseConfig
 
@@ -38,7 +38,7 @@ def calendar():
 @views_blueprint.route("/join", methods=['GET','POST'])
 def join():
     # Initialize form and check if it is valid
-    form = RegisterForm(meta={'csrf':False})
+    form = RegistrationForm(meta={'csrf':False})
     valid = form.validate_on_submit()
 
     # On form submission with valid input
