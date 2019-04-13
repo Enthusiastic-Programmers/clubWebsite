@@ -19,7 +19,7 @@ Link to website: https://epclub.pythonanywhere.com/
 
     Linux: `source venv/bin/activate`
 
-    Windows: `venv/Scripts/activate.bat`
+    Windows: `venv\Scripts\activate.bat`
 
 4) Install dependencies
 
