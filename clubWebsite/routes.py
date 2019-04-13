@@ -2,6 +2,7 @@ import time
 import secrets
 import html
 import urllib
+import html
 from werkzeug import unescape
 
 import traceback
@@ -44,11 +45,26 @@ def join():
     if request.method == 'POST' and valid:
         confirmation_token, confirmation_time = Member.generate_confirmation_token()
         confirmation_link = request.url_root.rstrip('/') + url_for('views.confirm', confirmation_token=confirmation_token)
+
+        html_content = 'Hi ' + html.escape(form.first_name.data) + ',<br><br>'
+        html_content += 'You signed up for the Enthusiastic Programmers club. Verify that the following information is correct:<br><ul>'
+        html_content += '<li>First name: ' + html.escape(form.first_name.data) + '</li>'
+        html_content += '<li>Last name: ' + html.escape(form.last_name.data) + '</li>'
+        html_content += '<li>Student ID: ' + html.escape(form.student_id.data) + '</li>'
+        html_content += '</ul>'
+        html_content += 'If the above information is correct, click this link to confirm your membership: '
+        html_content += '<a href="' + html.escape(confirmation_link) + '">' + html.escape(confirmation_link) + '</a><br>'
+
+        html_content += '''
+Otherwise, simply ignore this email and submit new information on the join page. If you have already clicked the confirmation link, that is OK. Your information will be updated when you re-confirm.<br><br>
+
+If you did not initiate this action, ignore this email.'''
+
         message = Mail(
-            from_email='no-reply@epclub.pythonanywhere.com',
+            from_email='no-reply@' + request.host,
             to_emails=form.email.data,
             subject='Club membership confirmation',
-            html_content='Click this link to confirm your membership: <a href="' + confirmation_link + '">' + confirmation_link + '</a>'
+            html_content=html_content
         )
 
         try:
@@ -81,7 +97,7 @@ def email_sent():
     if not email:
         abort(400)
         abort(Response('Missing email'))
-    msg = 'An email has been sent to %s to confirm your membership' % email
+    msg = 'An email has been sent to %s to confirm your membership. You might have to check your spam folder.' % email
     
     flash(msg)
     return render_template("base.html", title="Registered")
