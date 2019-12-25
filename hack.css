@@ -60,7 +60,7 @@ main{
             }
         }
             .apply-button{
-                padding:20px;
+                padding: 10px 20px;
                 color:white;
                 background-color: rgb(226, 40, 11);
                 font-size:30px;
