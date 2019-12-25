@@ -183,7 +183,7 @@ main{
 }
 
 .section{
-    padding: 20px;
+    padding: 40px;
 }
 
 .section:nth-of-type(even){
@@ -309,6 +309,9 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
     .hash-link:before { 
       margin-top: -100px; 
       height: 100px;
+    }
+    .section{
+        padding: 20px;
     }
     .about-section{
         flex-direction: column;
