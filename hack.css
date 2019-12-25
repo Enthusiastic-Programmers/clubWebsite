@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+ul, ol{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
 img{
     /* Prevent image from being too big on mobile */
     max-width:100%;
@@ -13,17 +19,71 @@ body{
     padding:0px;
     margin:0px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 22px;
-    
+    font-size: 22px;  
 }
 
+header{
+    /* padding is used instead of width so background color expands to side of page */
+    padding-left:10%;
+    padding-right:10%;
+
+    padding-top:5px;
+    padding-bottom:5px;
+
+    display:flex;
+    align-items:center;
+    background-color:rgb(6, 12, 34);
+    position:fixed;
+    width:100%;
+    height: 50px;
+}
+    .logo{
+        max-width:100%;
+    }
+    #nav-bar {
+        width: 100%;
+        flex-grow:1;
+    }
+        #nav-bar ul{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            padding:6px;
+            list-style-type: none;
+        }
+            #nav-bar li{
+                flex-grow:1;
+
+                /*background-color:#eeeeee;*/
+                border-color:#e5e5e5;
+
+                border-width: 2px;
+                border-radius: 6px;
+
+
+
+                margin-left: 5px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                text-align: center;
+            }
+                #nav-bar li a{
+                    font-size: 18px;
+                    /*padding:10px;*/
+                    display:block;
+                    text-decoration: none;
+                    color: gray;
+                }
+                #nav-bar li a:hover{
+                    color: white;
+                    text-decoration: underline;
+                }
 
 main{
-    background-color: rgb(6,16,54);
+    background-color: #ffffff;
 }
 
-
-    .intro{
+    #intro{
         /*background-color: lightblue;*/
         background-color: white;
         background-image: url("./mountain.svg");
@@ -33,6 +93,7 @@ main{
         flex-direction:column;
         justify-content: center;
         align-items: center;
+        color: black;
     }
         .intro-container{
             flex-grow: 0;
@@ -109,24 +170,103 @@ main{
                 padding:30px;
             }
 
-header{
-    /* padding is used instead of width so background color expands to side of page */
-    padding-left:10%;
-    padding-right:10%;
-
-    display:flex;
-    align-items:center;
-    background-color:green;
+/* all this stuff was copy pasted from https://css-tricks.com/hash-tag-links-padding/ */
+/* Makes the hash tag links work with a fixed position header */
+.hash-link:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -50px; 
+  height: 50px; 
+  visibility: hidden; 
+  pointer-events: none;
 }
 
+.section{
+    padding: 20px;
+}
+
+.section:nth-of-type(even){
+    background-color: rgb(6,16,54);
+    color:white;
+}
+
+.section h2{
+    margin: 0px 0px 20px 0px;
+}
+
+.about-section{
+    display: flex;
+    flex-direction: row;
+}
+    .about-section .col1{
+        flex-basis: 50%;
+    }
+    .about-section .col2{
+        flex-basis: 25%;
+    }
+    .about-section .col3{
+        flex-basis: 25%;
+    }
+    .about-sectiont h3{
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+.schedule-section{
+}
+    .schedule-list{
+        list-style: none;
+    }
+        .schedule-list li{
+            margin-bottom: 5px;
+        }
+        .schedule-list h3{
+            margin: 0px;
+        }
+        .time-header{
+            margin-top: 20px
+        }
+        .time-slot{
+            display: flex;
+            flex-direction: row;
+        }
+            .time-slot time{
+                width: 150px;
+            }
+.sponsors-section{
+}
+    .sponsors-list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+        .sponsors-list img{
+            width: 230px;
+            height: 160px;
+        }
 
 
-
-
-
-
-
-
+.faq-section{
+}
+    .question-answer{
+        margin-bottom: 15px;
+    }
+        .question{
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .answer{
+            font-size: 20px;
+            color: lightgray;
+        }
+        .question:before{
+            content: "Q: ";
+        }
+        .answer:before{
+            content: "A: ";
+        }
+.contact-section{
+}
 
 
 /* Mobile media queries. At end of document so it overrides any other rules
@@ -157,6 +297,15 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
         padding:0px;
 
         /* Put navbar below image */
+        flex-direction: column;
+        height: 100px;
+    }
+    /* that fixed position header bullshit needs to be adjusted if header size increases to 100px */
+    .hash-link:before { 
+      margin-top: -100px; 
+      height: 100px;
+    }
+    .about-section{
         flex-direction: column;
     }
 

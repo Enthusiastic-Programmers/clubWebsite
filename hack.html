@@ -10,79 +10,136 @@
     </head>
     <body>
         <header>
-
+            <a>
+                <img src="{{ url_for('static', filename='images/EPFinal.png') }}" class="logo"/>
+            </a>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="#intro">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#sponsors">Sponsors</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li
+                </ul>
+            </nav>
         </header>
 
 
         <main>
 
-            <div class="intro">
+            <div id="intro">
                 <div class="intro-container">
                     <h1>Hack the 805</h1>
-                    <p>February 19th, 2020, Moorpark College</p>
+                    <p>April 3 - 4, 2020, Moorpark College</p>
 
                     <a class="apply-button" href="./apply.html">Apply</a>
                 </div>
             </div>
 
-            <div class="boxes">
-                <div class="info-box">
-                    <div class="info-box-heading">
-                        Box1
-                    </div>
-                    <div class="info-box-content">
-                        jirqeiwrhqopewrhqewiruvq89ur9ew f erge4io jgw54g4w5
-                         g
-                        45g45wgj4 5nig4w5 
-                         g45oig h54o 
-                        45 io45gh 54o gjo45p
-                    </div>
+            <section class="about-section section">
+                <div class="col1">
+                    <h2 id="about" class="hash-link">About</h2>
+                    <p>Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius aut accusantium et. Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt inventore in est ut optio sequi unde.</p>
                 </div>
-
-                <div class="info-box">
-                    <div class="info-box-heading">
-                        Box1
-                    </div>
-                    <div class="info-box-content">
-                        jirqeiwrhqopewrhqewiruvq89ur9ew f erge4io jgw54g4w5
-                         g
-                        45g45wgj4 5nig4w5 
-                         g45oig h54o 
-                        45 io45gh 54o gjo45p
-                    </div>
-
+                <div class="col2">
+                    <h3>Where</h3>
+                    <p>Moorpark College, Moorpark, CA</p>
                 </div>
-
-
-                <div class="info-box">
-                    <div class="info-box-heading">
-                        Box1
-                    </div>
-                    <div class="info-box-content">
-                        jirqeiwrhqopewrhqewiruvq89ur9ew f erge4io jgw54g4w5
-                         g
-                        45g45wgj4 5nig4w5 
-                         g45oig h54o 
-                        45 io45gh 54o gjo45p
-                    </div>
-
+                <div class="col3">
+                    <h3>When</h3>
+                    <p>April 3 - 4, 2020</p>
                 </div>
+            </section>
 
+            <section class="schedule-section section">
+                <h2 id="schedule" class="hash-link">Schedule</h2>
+                <ol class="schedule-list">
+                    <li class="time-header">
+                        <h3>April 3</h3>
+                        <hr>
+                    </li>
+                    <li class="time-slot">
+                        <time>09:00 AM</time>
+                        <div>Continental breakfast</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>10:30 AM</time>
+                        <div>Opening ceremony</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>12:00 PM</time>
+                        <div>Continental Lunch</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>01:00 PM</time>
+                        <div>Heckling begins</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>05:00 PM</time>
+                        <div>Continental Dinner</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>10:00 PM</time>
+                        <div>Continental Snack</div>
+                    </li>
+                    <li class="time-header">
+                        <h3>April 4</h3>
+                        <hr>
+                    </li>
+                    <li class="time-slot">
+                        <time>12:00 AM</time>
+                        <div>Whatever</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>09:00 AM</time>
+                        <div>Continental breakfast</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>10:00 AM</time>
+                        <div>Judgement Day</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>12:00 PM</time>
+                        <div>Closing Ceremony</div>
+                    </li>
+                </ol>
+            </section>
 
-                <div class="info-box">
-                    <div class="info-box-heading">
-                        Box1
-                    </div>
-                    <div class="info-box-content">
-                        jirqeiwrhqopewrhqewiruvq89ur9ew f erge4io jgw54g4w5
-                         g
-                        45g45wgj4 5nig4w5 
-                         g45oig h54o 
-                        45 io45gh 54o gjo45p
-                    </div>
+            <section class="sponsors-section section">
+                <h2 id="sponsors" class="hash-link">Sponsors</h2>
+                <ul class="sponsors-list">
+                    <li><img src="http://cdn2.insidermonkey.com/blog/wp-content/uploads/2013/04/Halliburton-Company-600x450.jpg"></li>
+                    <li><img src="https://4.bp.blogspot.com/-YXpUUaY37sY/UZajdj6dY2I/AAAAAAAAAl8/r7X1URthOCc/s1600/fruitco.jpg"></li>
+                    <li><img src="http://www.historyofdomainnames.com/wp-content/uploads/2016/10/raytheon-300x198.jpg"></li>
+                    <li><img src="https://1000logos.net/wp-content/uploads/2017/03/old-marlboro-logo-500x390.jpg"></li>
+                    <li><img src="https://www.valuewalk.com/wp-content/uploads/2013/04/Philip-morris-logo.jpg"></li>
+                    <li><img src="http://www.ucbjournal.com/wp-content/uploads/2017/09/Equifax_logo-1.jpg"></li>
+                </ul>                
+            </section>
 
-                </div>
-            </div>
+            <section class="faq-section section">
+                <h2 id="faq" class="hash-link">FAQ</h2>
+                <ul class="faq-list">
+                    <li class="question-answer">
+                        <div class="question">What do I bring?</div>
+                        <div class="answer">Bring a sleeping bag, laptop, charger, change of clothes, and toiletries.</div>
+                    </li>
+                    <li class="question-answer">
+                        <div class="question">Where do I sleep?</div>
+                        <div class="answer">On the floor. Really.</div>
+                    </li>
+                    <li class="question-answer">
+                        <div class="question">What do I bring?</div>
+                        <div class="answer">Bring a sleeping bag, laptop, charger, change of clothes, and toiletries.</div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="contact-section section">
+                <h2 id="contact" class="hash-link">Contact</h2>
+                <p>Don't know what to put here</p>
+            </section>
         </main>
     </body>
 </html>
