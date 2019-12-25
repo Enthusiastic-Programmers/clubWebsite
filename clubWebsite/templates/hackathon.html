@@ -5,7 +5,7 @@
             Hack the 805
         </title>
 
-        <link rel="stylesheet" type="text/css" href="./hack.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/hackathon.css') }}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
@@ -28,12 +28,12 @@
 
         <main>
 
-            <div id="intro">
+            <div id="intro" style="background-image: url('{{ url_for('static', filename='images/mountain.svg') }}');">
                 <div class="intro-container">
                     <h1>Hack the 805</h1>
                     <p>April 3 - 4, 2020, Moorpark College</p>
 
-                    <a class="apply-button" href="./apply.html">Apply</a>
+                    <a class="apply-button" href="{{ url_for('views.hackathon_apply') }}">Apply</a>
                 </div>
             </div>
 

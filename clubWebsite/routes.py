@@ -29,6 +29,14 @@ def about():
 def calendar():
     return render_template("calendar.html")
 
+@views_blueprint.route("/hackathon")
+def hackathon():
+    return render_template("hackathon.html")
+
+@views_blueprint.route("/hackathon_apply")
+def hackathon_apply():
+    return render_template("apply.html")
+
 @views_blueprint.route("/join", methods=['GET','POST'])
 def join():
     # Initialize form and check if it is valid
