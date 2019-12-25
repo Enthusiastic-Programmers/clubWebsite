@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+img{
+    /* Prevent image from being too big on mobile */
+    max-width:100%;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    padding:0px;
+    margin:0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+
+    background-color: rgb(6,16,54);
+    
+}
+
+
+    .questions{
+        margin:auto;    /* center it */
+        width:60vw;
+
+        display:flex;
+        flex-direction:column;
+        
+    }
+        .question:first-child{
+            margin-top:150px;
+        }
+        .question{
+            background-color: white;
+            border-radius: 10px;
+            display:flex;
+            flex-direction:column;
+            margin-bottom:150px;
+            padding: 30px;
+            min-height:200px;
+            justify-content:space-around;
+        }
+            .question label{
+                /*margin-bottom:auto;*/
+            }
+            .question .entry{
+                padding:10px;
+                font-size: 25px;
+            }
+        .submit{
+            /*background-color: white;*/
+            margin-bottom:150px;
+            min-height:200px;
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+            .submit input{
+                padding:10px;
+                font-size:30px;
+            }
+        
+
+header{
+    /* padding is used instead of width so background color expands to side of page */
+    padding-left:10%;
+    padding-right:10%;
+
+    display:flex;
+    align-items:center;
+    background-color:green;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile media queries. At end of document so it overrides any other rules
+https://stackoverflow.com/questions/10262082/css-media-queries-and-important
+*/
+/* max-device-width is not recommended:
+https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-max-width
+*/
+@media (max-width:43em){
+    figure{
+        margin-left:0px;
+        margin-right:0px;
+        /* Floating doesn't work well on small screens */
+        float:none !important;
+    }
+
+    .questions{
+        /* No margins on side of page */
+        width:100%;
+
+        /* But a bit of padding */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    header{
+        /* No margins on side of page */
+        padding:0px;
+
+        /* Put navbar below image */
+        flex-direction: column;
+    }
+
+}
