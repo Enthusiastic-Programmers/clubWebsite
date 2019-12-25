@@ -111,12 +111,12 @@ main{
             align-items: center;
             justify-content: flex-start;
         }
-        @media (max-width:600px){
+        @media (max-width:650px){
             .intro-container{
-                width:100%;
+                width:95%;
             }
         }
-        @media (max-height:400px){
+        @media (max-height:500px){
             .intro-container{
                 height:100%;
             }
@@ -299,6 +299,12 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
         flex-direction: column;
         height: 100px;
     }
+        .logo{
+            height: 20px;
+        }
+    #intro{
+        padding-top: 100px;
+    }
     /* that fixed position header bullshit needs to be adjusted if header size increases to 100px */
     .hash-link:before { 
       margin-top: -100px; 
@@ -314,6 +320,10 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
     }
         .time-slot time{
             width: initial;
+            font-weight: bold;
         }
-
+        .schedule-event{
+            font-size: 20px;
+            color: lightgray;
+        }
 }
