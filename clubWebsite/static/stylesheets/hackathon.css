@@ -201,9 +201,11 @@ main{
 }
     .about-section .col1{
         flex-basis: 50%;
+        padding-right: 20px;
     }
     .about-section .col2{
         flex-basis: 25%;
+        padding-right: 20px;
     }
     .about-section .col3{
         flex-basis: 25%;
