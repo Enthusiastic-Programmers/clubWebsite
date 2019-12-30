@@ -241,10 +241,19 @@ main{
         flex-direction: row;
         flex-wrap: wrap;
     }
-        .sponsors-list img{
-            width: 230px;
-            height: 160px;
+        .sponsors-list li{
+            margin: 5px 5px 0px 0px;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            border-width:1px;
+            border-style:solid;
+            border-color:gray;
+            height:160px;
         }
+            .sponsors-list img{
+                width: 230px;
+            }
 
 
 .faq-section{
