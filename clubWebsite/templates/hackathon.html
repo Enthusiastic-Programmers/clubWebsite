@@ -1,177 +1,196 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Hack the 805
-        </title>
 
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/hackathon.css') }}"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
-    <body>
-        <header>
-            <a>
-                <img src="{{ url_for('static', filename='images/EPFinal.png') }}" class="logo"/>
-            </a>
-            <nav id="nav-bar">
-                <ul>
-                    <li><a href="#intro">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#sponsors">Sponsors</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li
-                </ul>
-            </nav>
-        </header>
+<head>
+    <title>
+        Hack the 805
+    </title>
 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/hackathon.css') }}" />
+    <link rel="stylesheet" type="text/css" href="static/stylesheets/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 
-        <main>
+<body>
+    <header>
+        <a>
+            <img src="{{ url_for('static', filename='images/EPFinal.png') }}" class="logo" />
+        </a>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <div id="intro" style="background-image: url('{{ url_for('static', filename='images/mountain.svg') }}');">
-                <div class="intro-container">
-                    <h1>Hack the 805</h1>
-                    <p>April 3rd - 4th, 2020, Moorpark College</p>
+    <main>
 
-                    <a class="apply-button" href="{{ url_for('views.hackathon_apply') }}">Apply</a>
-                </div>
+        <div id="intro" style="background-image: url('{{ url_for('static', filename='images/mountain.svg') }}');">
+            <div class="intro-container">
+                <h1>Hack the 805</h1>
+                <p>April 3rd - 4th, 2020, Moorpark College</p>
+
+                <a class="apply-button" href="{{ url_for('views.hackathon_apply') }}">Apply</a>
             </div>
+        </div>
 
-            <section class="about-section section">
-                <div class="col1">
-                    <h2 id="about" class="hash-link">About</h2>
-                    <p>Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius aut accusantium et. Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt inventore in est ut optio sequi unde.</p>
-                </div>
-                <div class="col2">
-                    <h3>Where</h3>
-                    <p>Moorpark College, Moorpark, CA</p>
-                </div>
-                <div class="col3">
-                    <h3>When</h3>
-                    <p>April 3rd - 4th, 2020</p>
-                </div>
-            </section>
+        <section class="about-section section">
+            <div class="col1">
+                <h2 id="about" class="hash-link">About</h2>
+                <p>Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius aut accusantium et. Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt inventore in est ut optio
+                    sequi unde.</p>
+            </div>
+            <div class="col2">
+                <h3>Where</h3>
+                <p>Moorpark College, Moorpark, CA</p>
+            </div>
+            <div class="col3">
+                <h3>When</h3>
+                <p>April 3rd - 4th, 2020</p>
+            </div>
+        </section>
 
-            <section class="schedule-section section">
-                <h2 id="schedule" class="hash-link">Schedule</h2>
-                <ol class="schedule-list">
-                    <li class="time-header">
-                        <h3>April 3</h3>
-                        <hr>
-                    </li>
-                    <li class="time-slot">
-                        <time>04:00 PM</time>
-                        <div class="schedule-event">Registration opens</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>06:00 PM</time>
-                        <div class="schedule-event">Opening ceremony</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>07:00 PM</time>
-                        <div class="schedule-event">Hacking begins</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>08:00 PM</time>
-                        <div class="schedule-event">Dinner</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>09:00 PM - 10:00 PM</time>
-                        <div class="schedule-event">Workshop 1</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>10:00 PM - 11:00 PM</time>
-                        <div class="schedule-event">Workshop 2</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>11:00 PM - 12:00 AM</time>
-                        <div class="schedule-event">Workshop 3</div>
-                    </li>
-                    <li class="time-header">
-                        <h3>April 4</h3>
-                        <hr>
-                    </li>
-                    <li class="time-slot">
-                        <time>12:00 AM</time>
-                        <div class="schedule-event">Midnight snack</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>2:00 AM</time>
-                        <div class="schedule-event">Cup stacking</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>3:00 AM</time>
-                        <div class="schedule-event">Fun event 2</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>07:00 AM</time>
-                        <div class="schedule-event">Breakfast</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>08:00 AM - 09:00 AM</time>
-                        <div class="schedule-event">Workshop 4</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>09:00 AM - 10:00 AM</time>
-                        <div class="schedule-event">Workshop 5</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>11:00 AM - 12:00 PM</time>
-                        <div class="schedule-event">Workshop 6</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>12:00 PM</time>
-                        <div class="schedule-event">Lunch</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>3:00 PM</time>
-                        <div class="schedule-event">Fun event 3</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>4:00 PM || 7:00 PM</time>
-                        <div class="schedule-event">End hacking, dinner</div>
-                    </li>
-                    <li class="time-slot">
-                        <time>5:00 PM || 8:00 PM</time>
-                        <div class="schedule-event">Closing ceremony, winners, prizes</div>
-                    </li>
-                </ol>
-            </section>
+        <section class="schedule-section section">
+            <h2 id="schedule" class="hash-link">Schedule</h2>
+            <ol class="schedule-list">
+                <li class="time-header">
+                    <h3>April 3</h3>
+                    <hr>
+                </li>
+                <li class="time-slot">
+                    <time>04:00 PM</time>
+                    <div class="schedule-event">Registration opens</div>
+                </li>
+                <li class="time-slot">
+                    <time>06:00 PM</time>
+                    <div class="schedule-event">Opening ceremony</div>
+                </li>
+                <li class="time-slot">
+                    <time>07:00 PM</time>
+                    <div class="schedule-event">Hacking begins</div>
+                </li>
+                <li class="time-slot">
+                    <time>08:00 PM</time>
+                    <div class="schedule-event">Dinner</div>
+                </li>
+                <li class="time-slot">
+                    <time>09:00 PM - 10:00 PM</time>
+                    <div class="schedule-event">Workshop 1</div>
+                </li>
+                <li class="time-slot">
+                    <time>10:00 PM - 11:00 PM</time>
+                    <div class="schedule-event">Workshop 2</div>
+                </li>
+                <li class="time-slot">
+                    <time>11:00 PM - 12:00 AM</time>
+                    <div class="schedule-event">Workshop 3</div>
+                </li>
+                <li class="time-header">
+                    <h3>April 4</h3>
+                    <hr>
+                </li>
+                <li class="time-slot">
+                    <time>12:00 AM</time>
+                    <div class="schedule-event">Midnight snack</div>
+                </li>
+                <li class="time-slot">
+                    <time>2:00 AM</time>
+                    <div class="schedule-event">Cup stacking</div>
+                </li>
+                <li class="time-slot">
+                    <time>3:00 AM</time>
+                    <div class="schedule-event">Fun event 2</div>
+                </li>
+                <li class="time-slot">
+                    <time>07:00 AM</time>
+                    <div class="schedule-event">Breakfast</div>
+                </li>
+                <li class="time-slot">
+                    <time>08:00 AM - 09:00 AM</time>
+                    <div class="schedule-event">Workshop 4</div>
+                </li>
+                <li class="time-slot">
+                    <time>09:00 AM - 10:00 AM</time>
+                    <div class="schedule-event">Workshop 5</div>
+                </li>
+                <li class="time-slot">
+                    <time>11:00 AM - 12:00 PM</time>
+                    <div class="schedule-event">Workshop 6</div>
+                </li>
+                <li class="time-slot">
+                    <time>12:00 PM</time>
+                    <div class="schedule-event">Lunch</div>
+                </li>
+                <li class="time-slot">
+                    <time>3:00 PM</time>
+                    <div class="schedule-event">Fun event 3</div>
+                </li>
+                <li class="time-slot">
+                    <time>4:00 PM || 7:00 PM</time>
+                    <div class="schedule-event">End hacking, dinner</div>
+                </li>
+                <li class="time-slot">
+                    <time>5:00 PM || 8:00 PM</time>
+                    <div class="schedule-event">Closing ceremony, winners, prizes</div>
+                </li>
+            </ol>
+        </section>
 
-            <section class="sponsors-section section">
-                <h2 id="sponsors" class="hash-link">Sponsors</h2>
-                <ul class="sponsors-list">
-                    <li><img src="{{ url_for('static', filename='images/sponsors/1.png') }}"></li>
-                    <li><img src="{{ url_for('static', filename='images/sponsors/2.png') }}"></li>
-                    <li><img src="{{ url_for('static', filename='images/sponsors/3.png') }}"></li>
-                    <li><img src="{{ url_for('static', filename='images/sponsors/4.png') }}"></li>
-                    <li><img src="{{ url_for('static', filename='images/sponsors/5.png') }}"></li>
-                    <li><img src="{{ url_for('static', filename='images/sponsors/6.png') }}"></li>
-                </ul>                
-            </section>
+        <section class="sponsors-section section">
+            <h2 id="sponsors" class="hash-link">Sponsors</h2>
+            <ul class="sponsors-list">
+                <li><img src="{{ url_for('static', filename='images/sponsors/1.png') }}"></li>
+                <li><img src="{{ url_for('static', filename='images/sponsors/2.png') }}"></li>
+                <li><img src="{{ url_for('static', filename='images/sponsors/3.png') }}"></li>
+                <li><img src="{{ url_for('static', filename='images/sponsors/4.png') }}"></li>
+                <li><img src="{{ url_for('static', filename='images/sponsors/5.png') }}"></li>
+                <li><img src="{{ url_for('static', filename='images/sponsors/6.png') }}"></li>
+            </ul>
+        </section>
 
-            <section class="faq-section section">
-                <h2 id="faq" class="hash-link">FAQ</h2>
-                <ul class="faq-list">
-                    <li class="question-answer">
-                        <div class="question">What do I bring?</div>
-                        <div class="answer">Bring a sleeping bag, a laptop, a charger, a change of clothes, and toiletries.</div>
-                    </li>
-                    <li class="question-answer">
-                        <div class="question">Where do I sleep?</div>
-                        <div class="answer">On the floor.</div>
-                    </li>
-                    <li class="question-answer">
-                        <div class="question">Are workshops mandatory?</div>
-                        <div class="answer">No.</div>
-                    </li>
-                </ul>
-            </section>
+        <section class="faq-section section">
+            <h2 id="faq" class="hash-link">FAQ</h2>
+            <ul class="faq-list">
+                <li class="question-answer">
+                    <div class="question">What do I bring?</div>
+                    <div class="answer">Bring a sleeping bag, a laptop, a charger, a change of clothes, and toiletries.</div>
+                </li>
+                <li class="question-answer">
+                    <div class="question">Where do I sleep?</div>
+                    <div class="answer">On the floor.</div>
+                </li>
+                <li class="question-answer">
+                    <div class="question">Are workshops mandatory?</div>
+                    <div class="answer">No.</div>
+                </li>
+            </ul>
+        </section>
 
-            <section class="contact-section section">
-                <h2 id="contact" class="hash-link">Contact</h2>
-                <p>Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius aut accusantium et. Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt inventore in est ut optio sequi unde.</p>
-            </section>
-        </main>
-    </body>
+        <section class="contact-section section">
+            <h2 id="contact" class="hash-link">Contact</h2>
+            <p>Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius aut accusantium et. Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt inventore in est ut optio sequi
+                unde.</p>
+        </section>
+    </main>
+
+    <script src="static/jquery/jquery.min.js"></script>
+    <script src="static/jquery/jquery-migrate.min.js"></script>
+
+    <script src="static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="static/superfish/hoverIntent.js"></script>
+    <script src="static/superfish/superfish.min.js"></script>
+
+    <script src="static/wow/wow.min.js"></script>
+
+    <script src="static/js/hackathon.js"></script>
+</body>
+
 </html>
