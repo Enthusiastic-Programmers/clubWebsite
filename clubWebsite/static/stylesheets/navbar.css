@@ -2,13 +2,18 @@
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Nav Menu Essentials */
-.nav-menu,
-.nav-menu * {
+.nav-menu {
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: rgb(6, 12, 34);
+    background-color: transparent !important;
 }
+
+.navbar {
+    color: background-color: rgb(6, 12, 34) !important;
+}
+
+#nav-item {}
 
 .nav-menu ul {
     position: absolute;
