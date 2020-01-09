@@ -248,3 +248,55 @@ main {
 }
 
 .contact-section {}
+
+/* Mobile media queries. At end of document so it overrides any other rules
+https://stackoverflow.com/questions/10262082/css-media-queries-and-important
+*/
+/* max-device-width is not recommended:
+https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-max-width
+*/
+@media (max-width:768px){
+    figure{
+        margin-left:0px;
+        margin-right:0px;
+        /* Floating doesn't work well on small screens */
+        float:none !important;
+    }
+
+    .boxes{
+        /* No margins on side of page */
+        width:100%;
+
+        /* But a bit of padding */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    header{
+        /* No margins on side of page */
+        padding:0px;
+    }
+
+    #intro{
+        padding-top: 100px;
+    }
+    .section{
+        padding: 20px;
+    }
+    .about-section{
+        flex-direction: column;
+    }
+    .time-slot{
+        display: flex;
+        flex-direction: column;
+        margin-bottom:20px;
+    }
+        .time-slot time{
+            width: initial;
+            font-weight: bold;
+        }
+        .schedule-event{
+            font-size: 20px;
+            color: lightgray;
+        }
+}
