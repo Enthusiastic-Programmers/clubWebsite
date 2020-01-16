@@ -199,12 +199,14 @@ main {
 }
 
 .schedule-section hr {
+    /* counteract buttstrap BS */
     background-color: white;
 }
 
 .schedule-section > hr{
-    margin-left:0px;
-    margin-right:0px;
+    /* flexbox breaks this hr... because of course it does; it's CSS */
+    /* https://stackoverflow.com/a/34365325 */
+    width: 100%;
 }
 
 .schedule-section h2{
