@@ -196,9 +196,9 @@ main {
     flex-basis: 25%;
 }
 
-.about-sectiont h3 {
-    font-size: 18px;
-    text-transform: uppercase;
+.about-section h3 {
+    font-size: 1.125em;
+    /*text-transform: uppercase;*/
 }
 
 .schedule-section {
