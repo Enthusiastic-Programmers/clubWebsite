@@ -309,21 +309,22 @@ main {
 .sponsors-section {}
 
 .sponsors-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     max-width: 720px;
+    text-align: center;
 }
 
 .sponsors-list li {
-    margin: 5px 5px 0px 0px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     border-width: 1px;
     border-style: solid;
     border-color: gray;
     height: 160px;
+     /* space between adds 5px to sides already:
+     https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+     */
+    margin-bottom: 5px;
 }
 
 .sponsors-list img {
