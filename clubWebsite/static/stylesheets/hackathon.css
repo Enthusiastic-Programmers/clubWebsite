@@ -152,9 +152,20 @@ main {
     margin: 0px 0px 20px 0px;
 }
 
+.centered-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .about-section {
+}
+
+.about-cols{
+    max-width: 800px;
     display: flex;
     flex-direction: row;
+    margin: auto;
 }
 
 .about-section .col1 {
@@ -177,8 +188,6 @@ main {
 }
 
 .schedule-section {
-    display:flex;
-    flex-direction:column;
 }
 
 .schedule-section hr {
@@ -240,6 +249,7 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    max-width: 720px;
 }
 
 .sponsors-list li {
@@ -259,6 +269,10 @@ main {
 
 .faq-section {}
 
+
+.faq-list{
+    max-width: 650px;
+}
 .question-answer {
     margin-bottom: 15px;
 }
@@ -282,6 +296,11 @@ main {
 }
 
 .contact-section {}
+
+.contact-section > p {
+    max-width: 650px;
+}
+
 
 /* Mobile media queries. At end of document so it overrides any other rules
 https://stackoverflow.com/questions/10262082/css-media-queries-and-important
@@ -317,7 +336,7 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
     .section{
         padding: 20px;
     }
-    .about-section{
+    .about-cols{
         flex-direction: column;
     }
     .time-slot{
