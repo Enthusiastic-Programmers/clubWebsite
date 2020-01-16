@@ -69,6 +69,14 @@ main {
     justify-content: flex-start;
 }
 
+.intro-container h1{
+    margin: 21px 0px;
+}
+
+.intro-container p{
+    margin: 16px 0px;
+}
+
 @media (max-width:650px) {
     .intro-container {
         width: 95%;
