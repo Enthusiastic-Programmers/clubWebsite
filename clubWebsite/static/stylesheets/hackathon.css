@@ -225,6 +225,7 @@ main {
 
 .schedule-box{
     max-width: 450px;
+    margin-right: 40px; /* so it's not right next to neighboring box */
 }
 
 
@@ -250,7 +251,11 @@ main {
 }
 
 .time-slot time {
-    width: 250px;
+    width: 200px;
+}
+
+.schedule-event{
+    max-width: 150px;
 }
 
 .sponsors-section {}
