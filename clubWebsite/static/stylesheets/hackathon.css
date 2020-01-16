@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+p{
+    /* stop overflow when screen is small */
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
 ul, ol {
     padding: 0px;
     margin: 0px;
@@ -354,7 +360,11 @@ main {
 
 .contact-section {}
 
+/* the max-width:100% at the top for all p isn't enough, must override
+to get it to max-out at 650px */
 .contact-section > p {
+    text-align: center;
+    width: 100%;
     max-width: 650px;
 }
 
