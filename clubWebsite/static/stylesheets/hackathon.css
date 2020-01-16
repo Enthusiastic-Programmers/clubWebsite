@@ -207,36 +207,35 @@ main {
     /* flexbox breaks this hr... because of course it does; it's CSS */
     /* https://stackoverflow.com/a/34365325 */
     width: 100%;
+    margin-top: 5px;
 }
 
 .schedule-section h2{
     margin: auto;
     align-self:center;
-    margin-bottom:10px;
 }
 
 .schedule-boxes{
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin: auto;
     align-self:center;
+    column-width: 350px;
+    column-count: 2;
+    column-gap: 40px;
 }
 
 .schedule-box{
-    max-width: 450px;
-    margin-right: 40px; /* so it's not right next to neighboring box */
+    max-width: 350px;
+    margin: auto;
+    /* https://stackoverflow.com/a/33506807 */
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
-
-
-
 
 .schedule-list {
     list-style: none;
 }
 
 .time-header {
-    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -257,6 +256,49 @@ main {
 .schedule-event{
     max-width: 150px;
 }
+
+/* add space at bottom between next schedule box */
+.time-slot:last-child{
+    margin-bottom: 40px;
+}
+
+
+/* schedule adjustments for mobile layout */
+@media (max-width:768px){
+    .schedule-boxes{
+        column-width: 250px;
+    }
+    .schedule-box{
+        max-width: 250px;
+    }
+    .time-header{
+        border-bottom-style: solid;
+        border-bottom-color: white;
+        border-bottom-width: 1px;
+        padding-bottom: 5px;
+    }
+    .time-header h3{
+        text-align: center;
+    }
+    .time-slot{
+        display: flex;
+        flex-direction: column;
+        margin-bottom:20px;
+    }
+    .time-slot time{
+        width: initial;
+        font-weight: bold;
+    }
+    .schedule-event{
+        font-size: 20px;
+        color: lightgray;
+        max-width: 250px;
+    }
+
+}
+
+
+
 
 .sponsors-section {}
 
@@ -354,17 +396,4 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
     .about-cols{
         flex-direction: column;
     }
-    .time-slot{
-        display: flex;
-        flex-direction: column;
-        margin-bottom:20px;
-    }
-        .time-slot time{
-            width: initial;
-            font-weight: bold;
-        }
-        .schedule-event{
-            font-size: 20px;
-            color: lightgray;
-        }
 }
