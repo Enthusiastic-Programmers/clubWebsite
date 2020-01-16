@@ -23,7 +23,7 @@ body {
 }
 
 header{
-    background-color: rgb(6, 12, 34);
+    background-color: rgb(34, 65, 148);;
     display:flex !important;    /* override bootstrap stuff */
     justify-content: space-between;
     padding: 0 10px;
@@ -67,6 +67,14 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+}
+
+.intro-container h1{
+    margin: 21px 0px;
+}
+
+.intro-container p{
+    margin: 16px 0px;
 }
 
 @media (max-width:650px) {
@@ -152,9 +160,20 @@ main {
     margin: 0px 0px 20px 0px;
 }
 
+.centered-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .about-section {
+}
+
+.about-cols{
+    max-width: 800px;
     display: flex;
     flex-direction: row;
+    margin: auto;
 }
 
 .about-section .col1 {
@@ -176,14 +195,46 @@ main {
     text-transform: uppercase;
 }
 
-.schedule-section {}
+.schedule-section {
+}
+
+.schedule-section hr {
+    background-color: white;
+}
+
+.schedule-section > hr{
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.schedule-section h2{
+    margin: auto;
+    align-self:center;
+    margin-bottom:10px;
+}
+
+.schedule-boxes{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: auto;
+    align-self:center;
+}
+
+.schedule-box{
+    width:450px;
+}
+
+
+
 
 .schedule-list {
     list-style: none;
 }
 
 .time-header {
-    margin-top: 20px
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .time-header h3 {
@@ -206,6 +257,7 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    max-width: 720px;
 }
 
 .sponsors-list li {
@@ -225,6 +277,10 @@ main {
 
 .faq-section {}
 
+
+.faq-list{
+    max-width: 650px;
+}
 .question-answer {
     margin-bottom: 15px;
 }
@@ -248,6 +304,11 @@ main {
 }
 
 .contact-section {}
+
+.contact-section > p {
+    max-width: 650px;
+}
+
 
 /* Mobile media queries. At end of document so it overrides any other rules
 https://stackoverflow.com/questions/10262082/css-media-queries-and-important
@@ -283,7 +344,7 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
     .section{
         padding: 20px;
     }
-    .about-section{
+    .about-cols{
         flex-direction: column;
     }
     .time-slot{

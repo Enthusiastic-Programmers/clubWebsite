@@ -33,7 +33,6 @@
 
         <div id="intro" style="background-image: url('{{ url_for('static', filename='images/mountain.svg') }}');">
             <div class="intro-container">
-                <img src="{{ url_for('static', filename='images/805.png') }}">
                 <h1>Hack the 805</h1>
                 <p>April 3rd - 4th, 2020, Moorpark College</p>
 
@@ -42,106 +41,113 @@
         </div>
 
         <section class="about-section section">
-            <div class="col1">
-                <h2 id="about" class="hash-link">About</h2>
-                <p>Moorpark is hosting one of the first Ventura County based hackathon for college students. For two days, students will compete and team together to create innovative and amazing products that will benefit everyone as a whole. Through the creativity of creation,communication of ideas, and lots of coffee,Hack805 wants to set the level of what a community college hackathon can be like.</p>
-            </div>
-            <div class="col2">
-                <h3>Where</h3>
-                <p>Moorpark College, Moorpark, CA</p>
-            </div>
-            <div class="col3">
-                <h3>When</h3>
-                <p>April 3rd - 4th, 2020</p>
+            <div class="about-cols">
+                <div class="col1">
+                    <h2 id="about" class="hash-link">About</h2>
+                    <p>Moorpark is hosting one of the first Ventura County based hackathon for college students. For two days, students will compete and team together to create innovative and amazing products that will benefit everyone as a whole. Through the creativity of creation,communication of ideas, and lots of coffee,Hack805 wants to set the level of what a community college hackathon can be like.</p>
+                </div>
+                <div class="col2">
+                    <h3>Where</h3>
+                    <p>Moorpark College, Moorpark, CA</p>
+                </div>
+                <div class="col3">
+                    <h3>When</h3>
+                    <p>April 3rd - 4th, 2020</p>
+                </div>
             </div>
         </section>
 
-        <section class="schedule-section section">
+        <section class="schedule-section section centered-section">
             <h2 id="schedule" class="hash-link">Schedule</h2>
-            <ol class="schedule-list">                
-                <li class="time-header">
-                    <h3>April 3</h3>
-                    <hr>
-                </li>
-                <li class="time-slot">
-                    <time>04:00 PM</time>
-                    <div class="schedule-event">Registration opens</div>
-                </li>
-                <li class="time-slot">
-                    <time>06:00 PM</time>
-                    <div class="schedule-event">Opening ceremony</div>
-                </li>
-                <li class="time-slot">
-                    <time>07:00 PM</time>
-                    <div class="schedule-event">Hacking begins</div>
-                </li>
-                <li class="time-slot">
-                    <time>08:00 PM</time>
-                    <div class="schedule-event">Dinner</div>
-                </li>
-                <li class="time-slot">
-                    <time>09:00 PM - 10:00 PM</time>
-                    <div class="schedule-event">Workshop 1</div>
-                </li>
-                <li class="time-slot">
-                    <time>10:00 PM - 11:00 PM</time>
-                    <div class="schedule-event">Workshop 2</div>
-                </li>
-                <li class="time-slot">
-                    <time>11:00 PM - 12:00 AM</time>
-                    <div class="schedule-event">Workshop 3</div>
-                </li>
-                <li class="time-header">
-                    <h3>April 4</h3>
-                    <hr>
-                </li>
-                <li class="time-slot">
-                    <time>12:00 AM</time>
-                    <div class="schedule-event">Midnight snack</div>
-                </li>
-                <li class="time-slot">
-                    <time>2:00 AM</time>
-                    <div class="schedule-event">Cup stacking</div>
-                </li>
-                <li class="time-slot">
-                    <time>3:00 AM</time>
-                    <div class="schedule-event">Fun event 2</div>
-                </li>
-                <li class="time-slot">
-                    <time>07:00 AM</time>
-                    <div class="schedule-event">Breakfast</div>
-                </li>
-                <li class="time-slot">
-                    <time>08:00 AM - 09:00 AM</time>
-                    <div class="schedule-event">Workshop 4</div>
-                </li>
-                <li class="time-slot">
-                    <time>09:00 AM - 10:00 AM</time>
-                    <div class="schedule-event">Workshop 5</div>
-                </li>
-                <li class="time-slot">
-                    <time>11:00 AM - 12:00 PM</time>
-                    <div class="schedule-event">Workshop 6</div>
-                </li>
-                <li class="time-slot">
-                    <time>12:00 PM</time>
-                    <div class="schedule-event">Lunch</div>
-                </li>
-                <li class="time-slot">
-                    <time>3:00 PM</time>
-                    <div class="schedule-event">Fun event 3</div>
-                </li>
-                <li class="time-slot">
-                    <time>4:00 PM || 7:00 PM</time>
-                    <div class="schedule-event">End hacking, dinner</div>
-                </li>
-                <li class="time-slot">
-                    <time>5:00 PM || 8:00 PM</time>
-                    <div class="schedule-event">Closing ceremony, winners, prizes</div>
-                </li>
-            </ol>
+            <hr>
+            <div class="schedule-boxes">
+                <ol class="schedule-list schedule-box">                
+                    <li class="time-header">
+                        <h3>April 3</h3>
+                        <!--<hr>--->
+                    </li>
+                    <li class="time-slot">
+                        <time>04:00 PM</time>
+                        <div class="schedule-event">Registration opens</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>06:00 PM</time>
+                        <div class="schedule-event">Opening ceremony</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>07:00 PM</time>
+                        <div class="schedule-event">Hacking begins</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>08:00 PM</time>
+                        <div class="schedule-event">Dinner</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>09:00 PM - 10:00 PM</time>
+                        <div class="schedule-event">Workshop 1</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>10:00 PM - 11:00 PM</time>
+                        <div class="schedule-event">Workshop 2</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>11:00 PM - 12:00 AM</time>
+                        <div class="schedule-event">Workshop 3</div>
+                    </li>
+                </ol>
+                <ol class="schedule-list schedule-box">  
+                    <li class="time-header">
+                        <h3>April 4</h3>
+                        <!--<hr>--->
+                    </li>
+                    <li class="time-slot">
+                        <time>12:00 AM</time>
+                        <div class="schedule-event">Midnight snack</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>2:00 AM</time>
+                        <div class="schedule-event">Cup stacking</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>3:00 AM</time>
+                        <div class="schedule-event">Fun event 2</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>07:00 AM</time>
+                        <div class="schedule-event">Breakfast</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>08:00 AM - 09:00 AM</time>
+                        <div class="schedule-event">Workshop 4</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>09:00 AM - 10:00 AM</time>
+                        <div class="schedule-event">Workshop 5</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>11:00 AM - 12:00 PM</time>
+                        <div class="schedule-event">Workshop 6</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>12:00 PM</time>
+                        <div class="schedule-event">Lunch</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>3:00 PM</time>
+                        <div class="schedule-event">Fun event 3</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>4:00 PM || 7:00 PM</time>
+                        <div class="schedule-event">End hacking, dinner</div>
+                    </li>
+                    <li class="time-slot">
+                        <time>5:00 PM || 8:00 PM</time>
+                        <div class="schedule-event">Closing ceremony, winners, prizes</div>
+                    </li>
+                </ol>
+            </div>
         </section>
-        <section class="sponsors-section section">
+        <section class="sponsors-section section centered-section">
             <h2 id="sponsors" class="hash-link">Sponsors</h2>
             <ul class="sponsors-list">
                 <li><img src="{{ url_for('static', filename='images/sponsors/1.png') }}"></li>
@@ -153,7 +159,7 @@
             </ul>
         </section>
 
-        <section class="faq-section section">
+        <section class="faq-section section centered-section">
             <h2 id="faq" class="hash-link">FAQ</h2>
             <ul class="faq-list">
                 <li class="question-answer">
@@ -162,11 +168,7 @@
                 </li>
                 <li class="question-answer">
                     <div class="question">What do I bring?</div>
-                    <div class="answer">Bring a sleeping bag, a laptop, a charger, a change of clothes, and toiletries.</div>
-                </li>
-                <li class="question-answer">
-                    <div class="question">Can I sleep?</div>
-                    <div class="answer">There will be sleeping areas in case you want to catch some sleep.</div>
+                    <div class="answer">Bring a laptop, a charger, a change of clothes, and toiletries.</div>
                 </li>
                 <li class="question-answer">
                     <div class="question">Are workshops mandatory?</div>
@@ -175,9 +177,9 @@
             </ul>
         </section>
 
-        <section class="contact-section section">
+        <section class="contact-section section centered-section">
             <h2 id="contact" class="hash-link">Contact</h2>
-            <p>Contact the Moorpark College Enthusiastic Programmers Club at Moorpark College's Website for more information about the hackathon.</p>
+            <p>Contact us at EnthusiasticProgrammersClub@gmail.com</p>
         </section>
     </main>
 
