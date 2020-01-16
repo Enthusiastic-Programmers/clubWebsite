@@ -23,7 +23,7 @@ body {
 }
 
 header{
-    background-color: rgb(6, 12, 34);
+    background-color: rgb(34, 65, 148);;
     display:flex !important;    /* override bootstrap stuff */
     justify-content: space-between;
     padding: 0 10px;
