@@ -176,14 +176,48 @@ main {
     text-transform: uppercase;
 }
 
-.schedule-section {}
+.schedule-section {
+    display:flex;
+    flex-direction:column;
+}
+
+.schedule-section hr {
+    background-color: white;
+}
+
+.schedule-section > hr{
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.schedule-section h2{
+    margin: auto;
+    align-self:center;
+    margin-bottom:10px;
+}
+
+.schedule-boxes{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: auto;
+    align-self:center;
+}
+
+.schedule-box{
+    width:450px;
+}
+
+
+
 
 .schedule-list {
     list-style: none;
 }
 
 .time-header {
-    margin-top: 20px
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .time-header h3 {
