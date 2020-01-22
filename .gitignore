@@ -8,3 +8,5 @@ data/
 
 .env
 sendgrid.env
+.DS_STORE
+.vscode/

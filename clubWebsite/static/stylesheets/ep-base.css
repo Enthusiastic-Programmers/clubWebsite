@@ -82,7 +82,16 @@ table, th, td{
 
 
 div.faq-block {
-    background-color: rgb(140,140, 140);
+    /*background-color: rgb(140,140, 140);*/
+    background-color: rgb(70, 128, 70);
+    padding: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 12px;
+}
+/* to differentiate between faq's and about us*/
+div.about-block {
+    background-color: green;
     padding: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
@@ -90,9 +99,32 @@ div.faq-block {
 }
 
 p.question-text {
-    font-size: 24px;
+    font-size: 26px;
 }
 
+p.about-text {
+    font-size: 32px;
+}
+
+p.about-name{
+    font-size: 27px;
+
+}
+
+p.hack-text {
+    font-size: 30px;
+}
+
+ul.hack-block
+{
+    background-color: green;
+    padding: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 12px;
+
+
+}
 .basic-font {
     font-family: Arial, Helvetica, sans-serif;
     margin-top:5px;

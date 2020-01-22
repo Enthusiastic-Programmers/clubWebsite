@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+p{
+    /* stop overflow when screen is small */
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
 ul, ol {
     padding: 0px;
     margin: 0px;
@@ -23,7 +29,7 @@ body {
 }
 
 header{
-    background-color: rgb(34, 65, 148);;
+    background-color: rgb(6, 12, 34);
     display:flex !important;    /* override bootstrap stuff */
     justify-content: space-between;
     padding: 0 10px;
@@ -190,50 +196,52 @@ main {
     flex-basis: 25%;
 }
 
-.about-sectiont h3 {
-    font-size: 18px;
-    text-transform: uppercase;
+.about-section h3 {
+    font-size: 1.125em;
+    /*text-transform: uppercase;*/
 }
 
 .schedule-section {
 }
 
 .schedule-section hr {
+    /* counteract buttstrap BS */
     background-color: white;
 }
 
 .schedule-section > hr{
-    margin-left:0px;
-    margin-right:0px;
+    /* flexbox breaks this hr... because of course it does; it's CSS */
+    /* https://stackoverflow.com/a/34365325 */
+    width: 100%;
+    margin-top: 5px;
 }
 
 .schedule-section h2{
     margin: auto;
     align-self:center;
-    margin-bottom:10px;
 }
 
 .schedule-boxes{
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin: auto;
     align-self:center;
+    column-width: 350px;
+    column-count: 2;
+    column-gap: 40px;
 }
 
 .schedule-box{
-    width:450px;
+    max-width: 350px;
+    margin: auto;
+    /* https://stackoverflow.com/a/33506807 */
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
-
-
-
 
 .schedule-list {
     list-style: none;
 }
 
 .time-header {
-    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -248,27 +256,75 @@ main {
 }
 
 .time-slot time {
-    width: 250px;
+    width: 200px;
 }
+
+.schedule-event{
+    max-width: 150px;
+}
+
+/* add space at bottom between next schedule box */
+.time-slot:last-child{
+    margin-bottom: 40px;
+}
+
+
+/* schedule adjustments for mobile layout */
+@media (max-width:768px){
+    .schedule-boxes{
+        column-width: 250px;
+    }
+    .schedule-box{
+        max-width: 250px;
+    }
+    .time-header{
+        border-bottom-style: solid;
+        border-bottom-color: white;
+        border-bottom-width: 1px;
+        padding-bottom: 5px;
+    }
+    .time-header h3{
+        text-align: center;
+    }
+    .time-slot{
+        display: flex;
+        flex-direction: column;
+        margin-bottom:20px;
+    }
+    .time-slot time{
+        width: initial;
+        font-weight: bold;
+    }
+    .schedule-event{
+        font-size: 20px;
+        color: lightgray;
+        max-width: 250px;
+    }
+
+}
+
+
+
 
 .sponsors-section {}
 
 .sponsors-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     max-width: 720px;
+    text-align: center;
 }
 
 .sponsors-list li {
-    margin: 5px 5px 0px 0px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     border-width: 1px;
     border-style: solid;
     border-color: gray;
     height: 160px;
+     /* space between adds 5px to sides already:
+     https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+     */
+    margin-bottom: 5px;
 }
 
 .sponsors-list img {
@@ -288,10 +344,11 @@ main {
 .question {
     font-weight: bold;
     margin-bottom: 5px;
+    font-size: 1.2em;
 }
 
 .answer {
-    font-size: 20px;
+    font-size: 1em;
     color: lightgray;
 }
 
@@ -305,7 +362,11 @@ main {
 
 .contact-section {}
 
+/* the max-width:100% at the top for all p isn't enough, must override
+to get it to max-out at 650px */
 .contact-section > p {
+    text-align: center;
+    width: 100%;
     max-width: 650px;
 }
 
@@ -347,17 +408,4 @@ https://stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-ma
     .about-cols{
         flex-direction: column;
     }
-    .time-slot{
-        display: flex;
-        flex-direction: column;
-        margin-bottom:20px;
-    }
-        .time-slot time{
-            width: initial;
-            font-weight: bold;
-        }
-        .schedule-event{
-            font-size: 20px;
-            color: lightgray;
-        }
 }
