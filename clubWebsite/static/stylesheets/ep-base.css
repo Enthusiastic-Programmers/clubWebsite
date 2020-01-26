@@ -150,7 +150,8 @@ ul.hack-block
     height:1.5em;
 }
 #join-club input[type=submit]{
-    height:2em;
+    font-size: 1em;
+    padding: 5px 8px;
     margin-bottom: 20px;
 }
 
