@@ -16,7 +16,8 @@ body{
     margin:0px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
-    background-image: linear-gradient(to bottom, white 20% , rgb(140, 140, 140));
+    /*background-image: linear-gradient(to bottom, white 20% , rgb(140, 140, 140));*/
+    background-color: white;
 }
 
 main{
@@ -89,15 +90,16 @@ table, th, td{
 
 div.faq-block {
     /*background-color: rgb(140,140, 140);*/
-    background-color: rgb(70, 128, 70);
+    /*background-color: rgb(70, 128, 70);*/
+    background-color: #ededed;
     padding: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
     border-radius: 12px;
 }
-/* to differentiate between faq's and about us*/
+
 div.about-block {
-    background-color: green;
+    background-color: #ededed;
     padding: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
@@ -123,7 +125,7 @@ p.hack-text {
 
 ul.hack-block
 {
-    background-color: green;
+    background-color: #ededed;
     padding: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
