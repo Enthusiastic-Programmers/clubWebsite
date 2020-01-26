@@ -34,13 +34,6 @@
                             Calendar
                         </a>
                     </li> 
-                    
-
-                    <li class="{% if request.endpoint == 'views.join' %} current-page {% endif %}">
-                        <a href="{{ url_for('views.hackathon') }}">
-                            Our Hackathon
-                        </a>
-                    </li>
 
                     <li class="{% if request.endpoint == 'views.join' %} current-page {% endif %}">
                         <a href="{{ url_for('views.join') }}">
