@@ -325,6 +325,10 @@ main {
      https://css-tricks.com/fighting-the-space-between-inline-block-elements/
      */
     margin-bottom: 5px;
+    /* hackerfund image has intrinsic height bigger than box. 
+    It causes the inline track to become too big even though it's resized down.
+    This fixes it for some reason */
+    vertical-align: top;
 }
 
 .sponsors-list img {
