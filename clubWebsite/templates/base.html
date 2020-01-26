@@ -19,6 +19,11 @@
                 <ul>
                     <li class="{% if request.endpoint == 'views.about' %} current-page {% endif %}">
                         <a href="{{ url_for('views.about') }}">
+                            Home
+                        </a>
+                    </li>
+                    <li class="{% if request.endpoint == 'views.about' %} current-page {% endif %}">
+                        <a href="{{ url_for('views.about') }}">
                             About 
                         </a>
                     </li>
