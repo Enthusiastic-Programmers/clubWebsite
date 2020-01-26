@@ -1,3 +1,9 @@
+p{
+    /* stop overflow when screen is small */
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
 img{
     /* Prevent image from being too big on mobile */
     max-width:100%;
