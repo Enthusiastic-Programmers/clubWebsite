@@ -8,6 +8,16 @@ p{
     max-width: 100%;
 }
 
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
 ul, ol {
     padding: 0px;
     margin: 0px;
@@ -26,6 +36,7 @@ body {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
+    line-height: 1.5;
 }
 
 header{
@@ -77,6 +88,8 @@ main {
 
 .intro-container h1{
     margin: 21px 0px;
+    font-size: 2.5rem;
+    font-weight:500;
 }
 
 .intro-container p{
