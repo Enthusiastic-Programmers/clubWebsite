@@ -122,7 +122,9 @@ p.about-name{
 p.hack-text {
     font-size: 30px;
 }
-
+span.cal {
+    font-size: 16px;
+}
 ul.hack-block
 {
     background-color: #ededed;
