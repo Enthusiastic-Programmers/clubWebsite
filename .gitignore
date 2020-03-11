@@ -5,6 +5,8 @@ data/
 # Virtual Environments
 *venv*
 *.db
+*.pyc
+
 
 .env
 sendgrid.env
