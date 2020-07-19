@@ -17,42 +17,53 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
     /*background-image: linear-gradient(to bottom, white 20% , rgb(140, 140, 140));*/
-    background-color: white;
+    background-color: #eeeeee;
 }
 
 main{
     margin:auto;    /* center it */
-    width:80vw;
+    width:69vw;
 }
 
 header{
     /* padding is used instead of width so background color expands to side of page */
-    padding-left:10%;
-    padding-right:10%;
+    padding-left:14.20%;
+    padding-right:12%;
+    /* space between header items? */
+    justify-content: space-between; 
 
+    /* flex grid */
     display:flex;
     align-items:center;
-    background-color:green;
+    background-color:green; 
 }
 
+
+/* NAV-BAR ID for the header */
+
+/* deals with nav bar items in general **/
 #nav-bar {
     width: 100%;
-    flex-grow:1;
+    list-style: none;    
+    /* mess with font for a mdeium thick and medium size font*/ 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
 }
+/* nav-bar ul items */
 #nav-bar ul{
     display:flex;
     flex-wrap: wrap;
     justify-content:center;
-    padding:6px;
     list-style-type: none;
 }
+/* nav-bar li itmes */
 #nav-bar li{
     flex-grow:1;
 
     background-color:#eeeeee;
-    border-color:#e5e5e5;
-
-    border-width: 2px;
+    border: 3px solid green;
     border-radius: 6px;
 
 
@@ -62,16 +73,31 @@ header{
     margin-bottom: 5px;
     text-align: center;
 }
-#nav-bar li a{
-    padding:10px;
-    display:block;
-    text-decoration: none;
-    color: black;
-}
-#nav-bar li:not(.current-page):hover{
-    background-color: #cecece;
-    text-decoration: overline;
-}
+    /* hovering over nav-bar in li */
+    #nav-bar li:hover {
+        color: green;
+        border: 3px solid rgb(0, 70, 0);
+        border-radius: 6px;
+    }
+    #nav-bar li a{
+        padding:10px;
+        display:block;
+        text-decoration: none;
+        color: black;
+    }
+    /* nav-bar of current page item */
+    #nav-bar li.current-page {
+        border: 3px solid black;
+        border-radius: 6px;
+    }
+    /* hovering over nav-bar of other, non current pages */
+    #nav-bar li:not(.current-page):hover{
+        background-color: #cecece;
+        text-decoration: none;
+    }
+
+
+
 
 table, th, td{
     border: 1px solid black; 
